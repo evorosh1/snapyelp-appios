@@ -1,0 +1,45 @@
+Cross-platform
+Entertainment/Multimedia/Simulation
+
+How will you use this application? 
+Mobile/Apple/Windows
+
+Where would the user be located physically when using this application?
+Anywhere
+
+Where would the results be visible?
+On the App
+
+When will this application be used?
+Whenever the user wants
+
+When can the application fail?
+Bugs in code, small servers, bad UI, bad structure
+
+Who is my user?
+Everyone
+
+Who will deliver the inputs for the application?
+The User, Our team, the system
+
+Who will receive the outputs of the application?
+The User, the system
+
+What do I know about this application?
+Very minimal
+
+What does this application need to do?
+Entertain
+
+What are the components of this application?
+Server, System, User, Interface
+
+What needs to happen next?
+Implement the code
+
+What must happen before the next step?
+Proper planning and structure
+
+What needs to be tracked?
+Users
+
