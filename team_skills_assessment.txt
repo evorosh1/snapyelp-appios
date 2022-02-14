@@ -1,0 +1,54 @@
+python
+C: Competent
+D: Competent
+L: Competent
+c++
+C: proficient
+D: proficient
+L: proficient
+java
+C: Novice
+D: Novice
+L: Competent
+C
+C: Competent
+D: Novice
+L: Competent
+R
+C: Novice
+D: None
+L: Novice
+React
+C: Novice
+D: Novice
+L: None
+Xcode
+C: None
+D: Novice
+L: Competent
+Visual Studio
+C: Novice
+D: Competent
+L: Novice
+Docker
+C: Novice
+D: Novice
+L: Novice
+Atom
+C: proficient
+D: Novice
+L: Novice
+BeautifulSoup
+C: Competent
+D: None
+L: None
+Flask
+C: None
+D: Novice
+L: None
+Jenga
+C: None
+D: Novice
+L: None
+
+
