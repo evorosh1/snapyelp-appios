@@ -46,7 +46,7 @@ Flask
 C: None
 D: Novice
 L: None
-Jenga
+Django
 C: None
 D: Novice
 L: None
