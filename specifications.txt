@@ -1,8 +1,9 @@
 Cross-platform
-Entertainment/Multimedia/Simulation
+
+Social Media
 
 How will you use this application? 
-Mobile/Apple/Windows
+Mobile
 
 Where would the user be located physically when using this application?
 Anywhere
