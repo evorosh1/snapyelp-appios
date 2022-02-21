@@ -1,0 +1,17 @@
+Application Vision/Goal:
+    Social Media App where users can share their daily activities with friends and gain inspiration from others on their feed
+Scope:
+    
+Deliverables:
+Success Criteria:
+Assumptions:
+Risks:
+Design / Architectural Review:
+Test Environment:
+
+Team Members:
+
+Team Roles:
+Team Norms:
+Application Stack:
+	Libraries/Frameworks
