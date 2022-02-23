@@ -1,0 +1,17 @@
+Title: Newsfeed Feature
+
+The Persona:
+Brenda is not too tech savy and has difficultly with scrolling and zooming in & out through the map feature. She rather prefers to view the posts from her friends in a newsfeed list rather than a map.
+
+
+The User Story:
+1) As a user, I want to have a newsfeed section so that I can view posts from people within friends list.
+2) As a developer, I want to implement a newsfeed feature so that the user can have different alternatives for viewing the posts.
+3) As a developer, I want to implement a newsfeed feature so that the user can view videos and other statuses posted by other users.
+
+
+The Acceptance Requirements:
+Having this feature meets the user requirements of needing a easier way to navigate through the different posts.
+
+
+Notes:

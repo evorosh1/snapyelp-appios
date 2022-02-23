@@ -1,0 +1,16 @@
+Title: Interactive Map Feature
+
+The Persona:
+It's a Friday night and Ron is looking for a place for him and friends to go out to eat. His impatient and too lazy to read through the tons of google reviews on the top bars in his area.
+
+
+The User Story:
+1) As a developer, I want to add a interactive map feature so that the user can view posts showcasing different activities/events going on near their current location.
+2) As a developer, I want to create a fun, engaging, and interactive review-like platform so that the user can easily view pictures and reviews/ratings of places near their area.
+
+
+The Acceptance Requirements:
+Having this feature meets the user requirements of needing a quick way to find fun places near their area that they can go to hang out.
+
+
+Notes:

@@ -9,7 +9,6 @@
     - user allowed to share their location when creating posts for the newsfeed or the map 
     - user can create groups, have other users join by sending out invites, or add users manually by username
     - newsfeed - can view friends posts like pictures, location, status, videos
-    - 
 
 3. What content do you want users to post?
     - anything they want - reviews on places the user has traveled to 

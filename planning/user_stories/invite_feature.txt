@@ -1,0 +1,15 @@
+Title: Invite Feature
+
+The Persona: 
+Bob is a very private person and is anxious about letting strangers view his personal posts. He would only like for his friends and family to view his posts.
+
+
+The User Story:
+1) As the developer, I want to create a invite-only kind of feature so that the user can create groups and have other users join their group by sending out invites or by add users manually by username
+
+
+The Acceptance Requirements:
+Having this feature meets the user requirements of needing to create a private group where only the users within that group can view their posts.
+
+
+Notes:
