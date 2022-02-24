@@ -1,17 +1,26 @@
 Application Vision/Goal:
-    Social Media App where users can share their daily activities with friends and gain inspiration from others on their feed
+    Social Media App where users can share their daily activities with friends and gain inspiration of places to travel to from others on their feed.
+
 Scope:
     
 Deliverables:
+
 Success Criteria:
+
 Assumptions:
+
 Risks:
+
 Design / Architectural Review:
+
 Test Environment:
 
 Team Members:
+Destiny Walcott, Liz Voroshylo, and Cole Cipp
 
 Team Roles:
+
 Team Norms:
-Application Stack:
-	Libraries/Frameworks
+    Application Stack:
+    
+	Libraries/Frameworks:
