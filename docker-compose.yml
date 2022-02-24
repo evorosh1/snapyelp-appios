@@ -1,0 +1,32 @@
+version: "3"
+
+# run "docker compose up" to start the server
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: app.Dockerfile
+    working_dir: /var/app
+    container_name: app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/var/app
+    ports:
+      - "8000:8000"
+    # depends_on:
+    #   - db
+  # db: # couldn't get this part to work
+  #   image: postgres
+  #   build: 
+  #     context: .
+  #     dockerfile: db.Dockerfile
+  #   working_dir: /var/db
+  #   container_name: db
+  #   volumes:
+  #     - ./db:/var/db
+  #   environment:
+  #     - POSTGRES_NAME=postgres
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+    
