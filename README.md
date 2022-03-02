@@ -4,9 +4,9 @@
 
 ## CS 445 Final Project
 
-### << Semester, Year >>
+### Spring, 2022
 
-<< [https://github.com/<repo>](#) >>
+https://github.com/bucs445spring22/final-project-team18
 
 << [link to demo presentation slides](#) >>
 
