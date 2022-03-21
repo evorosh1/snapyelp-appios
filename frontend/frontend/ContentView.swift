@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingProfile = false
     var body: some View {
         VStack {
             VStack(alignment: .center) {
@@ -21,7 +22,6 @@ struct ContentView: View {
                 Divider()
             }
             .padding(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/)
-            
             PostView()
             
             VStack {
@@ -30,13 +30,26 @@ struct ContentView: View {
                 HStack {
                     Text("| Map Icon |")
                     Spacer()
-                    Text("| Home Icon |")
-                    Spacer()
-                    Text("| Profile Icon |")
+                    Button {
+                        showingProfile.toggle()
+                    } label: {
+                        Label("Profile", systemImage: "person.crop.circle")
+                            .scaledToFill()
+                            .frame(width: 45.0, height: 45.0)
+                            .clipShape(Circle())
+                            .overlay {
+                                Circle().stroke(.white, lineWidth: 2)
+                            }
+                            .shadow(radius: 7)
+                    }
                 }
             }
+            .sheet(isPresented: $showingProfile) {
+                           ProfileView()
+                       }
+
+
             .padding(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/)
-            
         }
         .padding()
             

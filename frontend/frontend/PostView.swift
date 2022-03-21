@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PostView: View {
+    
+    
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -47,9 +49,9 @@ struct PostView: View {
             Divider()
             
             HStack {
-                Text("| Like Button |")
+                Text("|Like Button|")
                 Spacer()
-                Text("| Comment Button |")
+                Text("|Comment Button|")
             }
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)

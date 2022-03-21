@@ -3,6 +3,10 @@
     - a mobile app
 
 2. How would the user interact with this app?
+    - at the bottom of the screen will be a toggle bar that controls which part of the app the user will be in.
+            The most left will be the map
+            the middle will be the feed
+            the right most will be the user's profile which has the stored data of previous user reviews
     - map
         will be shown: pictures (design will be like a small circle icon and when its tapped on a popup with further details of the post will show), videos
         will not be shown: status
