@@ -66,23 +66,23 @@ struct ProfiledisplayView: View {
                     .overlay {
                         Rectangle().stroke(.gray)
                     }
-             HStack{
-                Button {
-                    showingHome.toggle()
-                } label: {
-                    Label("Home", systemImage: "person.crop.circle")
-                        .scaledToFill()
-                        .frame(width: 45.0, height: 45.0)
-                        .clipShape(Circle())
-                        .overlay {
-                            Circle().stroke(.white, lineWidth: 2)
-                        }
-                        .shadow(radius: 7)
-                }
-            }
-             .sheet(isPresented: $showingHome) {
-                            ContentView()
-                        }
+//             HStack{
+//                Button {
+//                    showingHome.toggle()
+//                } label: {
+//                    Label("Home", systemImage: "person.crop.circle")
+//                        .scaledToFill()
+//                        .frame(width: 45.0, height: 45.0)
+//                        .clipShape(Circle())
+//                        .overlay {
+//                            Circle().stroke(.white, lineWidth: 2)
+//                        }
+//                        .shadow(radius: 7)
+//                }
+//            }
+//             .sheet(isPresented: $showingHome) {
+//                            Newsfeed()
+//                        }
                 }
         
     }
