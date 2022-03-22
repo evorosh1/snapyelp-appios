@@ -8,6 +8,8 @@
 
 https://github.com/bucs445spring22/final-project-team18
 
+[Link to SRS](https://docs.google.com/document/d/1XIzcDxvqk0s2EKfq9kwLHxLzjQK8xb5tjyCpdFfjh94/edit?usp=sharing)
+
 << [link to demo presentation slides](#) >>
 
 ### Team: << team name >>
