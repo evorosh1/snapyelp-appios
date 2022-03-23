@@ -2,7 +2,7 @@
 
 *note: replace anything surrounded by << >> and **remove** the << >>*
 
-**Attended**: << record the team members in attendance (virtual counts as long as they are participating) >>
+**Attended**: 
 
 ***
 
@@ -12,27 +12,30 @@
 
 ### SRS Sections Updated
 
-<< List any SRS sections that were updated in the last sprint >>
+Requirements, Software Architecture Diagram
 
 ###  User Story
 
-<< Corresponding User Stories completed in this sprint >>
+- As a user, I want a view that just display posts that I have created
+- As a user, I want to see posts my friends have created
+- As a user, I want to add captions and pictures to my posts
 
 ### Sprint Requirements Attempted
 
-<< The corresponding SRS requirement that the team completed in the last sprint >>
+- sketched basic designs for the app
+- started the coding for the frontend gui
 
 ### Completed Requirements
 
-<< The work that's been completed in this sprint >>
+- implemented the front end gui for the basic structure of the app, the newsfeed page, the create post form, and the user profile page
 
 ### Incomplete Requirements
 
-<< The work that has not been completed in this sprint. Be VERY detailed and specific regarding what isn't working and what needs to be completed >>
+- the create post form is not 100% interactive, so right now you can't add new posts to the newsfeed page
 
 ### The summary of the entire project:
 
-<< A general overview of the entire project >>
+Social Media App where users can share their daily activities with friends and gain inspiration of places to travel to from others on their feed.
 
 ***
 
@@ -44,23 +47,24 @@
 
 ## Technical Debt
 
-<< Any requirements from the previous sprint that are using a techinical flex >>
+<< Any requirements from the previous sprint that are using a technical flex >>
 
 ### Requirement Target:
 
-<< The corresponding SRS requirement that our team will be complete in next sprint >>
+- frontend gui for the login & signup pages
 
 ### User Stories:
 
-<< Corresponding User Stories >>
+- As a user, I want to have/restrict access to the main features of the app
 
 ### Planning
 
-<< Our team's detailed plan to complete the sprint >>
+- sketch the ui for new frontend pages, then begin coding them
 
 ### Action Items
 
 << A list of things that need to happen in our for our team to complete the sprint >>
+- sketching the ui first
 
 ### Issues and Risks
 
@@ -68,4 +72,5 @@
 
 ### Team Work Assignments
 
-<< A list of each team member and their works assignments for this sprint >>
+- Destiny
+    - will code the frontend gui for the login and signup pages
