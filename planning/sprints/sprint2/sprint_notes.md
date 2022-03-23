@@ -86,7 +86,7 @@ None
 
 - Destiny
     - will code the frontend gui for the login and signup pages
--Liz
+- Liz
     - will code the frontend gui for editing/deleting/saving posts
 - Cole
     - will code a backend api to store user's information
