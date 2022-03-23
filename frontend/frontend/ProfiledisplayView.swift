@@ -12,14 +12,29 @@ struct ProfiledisplayView: View {
     var profile: Profile
     
     var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .center) {
+                Image("profilepic")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 60.0, height: 60.0)
+                    .clipShape(Circle())
+                    .overlay {
+                        Circle().stroke(.white, lineWidth: 4)
+                    }
+                    .shadow(radius: 7)
+                Text(profile.username)
+                    .bold()
+                    .font(.title)
+                Spacer()
+                Text("settings") // settings button for changing privacy settings
+            }
+            Text ("Add Friend") //function will be implmented later
+            Text("Profile Status: \(profile.publicprofile ? "Public": "Private" )")
+            
+        }
         ScrollView {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(profile.username)
-                            .bold()
-                            .font(.title)
-
-                        Text("Profile Status: \(profile.publicprofile ? "Public": "Private" )")
-                        
+                    VStack{
                         HStack(alignment: .center) {
                             Image("profilepic")
                                 .resizable()
