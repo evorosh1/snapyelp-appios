@@ -91,6 +91,7 @@ struct PostView: View {
         .padding()
         .overlay {
             Rectangle().stroke(.gray)
+            
         }
     }
 }

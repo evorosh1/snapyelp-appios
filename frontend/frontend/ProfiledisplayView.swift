@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ProfiledisplayView: View {
-    @State private var showingHome = false
+    @State private var showSettings = false
+    @State private var showFriends = false
+
     var profile: Profile
     
     var body: some View {
@@ -27,60 +29,56 @@ struct ProfiledisplayView: View {
                     .bold()
                     .font(.title)
                 Spacer()
-                Text("settings") // settings button for changing privacy settings
-            }
-            Text ("Add Friend") //function will be implmented later
-            Text("Profile Status: \(profile.publicprofile ? "Public": "Private" )")
-            
-        }
-        ScrollView {
-                    VStack{
-                        HStack(alignment: .center) {
-                            Image("profilepic")
+                Button (action: {
+                        showSettings.toggle()
+                    }, label: {
+                        Image(systemName: "gear.circle")
                                 .resizable()
-                                .scaledToFill()
-                                .frame(width: 60.0, height: 60.0)
+                                .frame(width: 25.0, height: 25.0)
+                    }) .padding(.trailing)
+                            .sheet(isPresented: $showSettings) {
+                                Text("Settings")
+                                    .font(.headline)
+                                }
+                //Text("settings") // settings button for changing privacy settings
+            }
+            Button (action: {
+                    showFriends.toggle()
+                }, label: {
+                    Image(systemName: "person.2.fill")
+                            .resizable()
+                            .frame(width: 32.0, height: 25.0)
+                }) .padding(.trailing)
+                        .sheet(isPresented: $showFriends) {
+                            VStack (alignment: .leading, spacing: 15) {
+                            Text("Friends List")
+                                .bold()
+                                .font(.title)
+                            .padding(.trailing)
+                            ScrollView{
+                                HStack{
+                            Image(friends[0].profilepic)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 35, height: 35)
                                 .clipShape(Circle())
                                 .overlay {
                                     Circle().stroke(.white, lineWidth: 4)
                                 }
-                                .shadow(radius: 7)
-                            VStack(alignment: .leading) {
-                                Text("Destiny")
-                                HStack {
-                                    Text("Bingamton, NY")
-                                    Text("o Public")
+                            Text(friends[0].name)
+                                .font(.headline)
+                            }
                                 }
                             }
-                            .padding(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-                            
-                            Spacer()
                         }
-                        
-                        Divider()
-                        
-                        Text("The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️")
-                        
-                        Image("tacos")
-                            .resizable()
-                            .scaledToFit()
-            //                .overlay {
-            //                    RoundedRectangle(cornerRadius: 10).stroke(.white)
-            //                }
-            //                .cornerRadius(10)
-                        
-                        Divider()
-                        
-                        HStack {
-                            Text("|Like Button|")
-                            Spacer()
-                            Text("|Comment Button|")
-                        }
-                    }
-                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                    .overlay {
-                        Rectangle().stroke(.gray)
-                    }
+            //Text ("Friends") //button to see friends list
+            Text("Profile Status: \(profile.publicprofile ? "Public": "Private" )")
+            
+        }
+        ScrollView {
+                    
+                PostView()
+
 //             HStack{
 //                Button {
 //                    showingHome.toggle()

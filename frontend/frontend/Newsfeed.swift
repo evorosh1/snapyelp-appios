@@ -50,6 +50,7 @@ struct Newsfeed: View {
             ScrollView {
                 VStack(spacing: 10) {
                     PostView()
+                    FriendView()
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal)
