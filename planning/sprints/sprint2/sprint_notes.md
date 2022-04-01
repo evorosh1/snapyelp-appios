@@ -1,92 +1,71 @@
-# Sprint Meeting Notes
+# Sprint 0 Meeting Notes
 
-*note: replace anything surrounded by << >> and **remove** the << >>*
+**Attended**: Liz, Destiny, Cole
 
-**Attended**: 
-Liz, Destiny
 ***
 
-## Sprint 2 Review
-
-
+## Sprint Review
 
 ### SRS Sections Updated
 
-Requirements, Software Architecture Diagram
+N/A
 
-###  User Story
+### User Story
 
-- As a user, I want a view the just display posts that I have created
-- As a user, I want to see posts my friends have created
-- As a user, I want to add captions and pictures to my posts
+As a client, I want an application that I can deploy on any server running Docker
 
-### Sprint Requirements Attempted
+### Requirement Implemented
 
-- sketched basic designs for the app
-- started the coding for the frontend gui
+**The application shall minimize required dependencies**
 
-### Completed Requirements
+In order to minimize dependencies, we will containerize the application with its dependencies. 
 
-- implemented the front end gui for the basic structure of the app, the newsfeed page, the create post form, and the user profile page
+Limit the dependency to a system that supports Docker containers.
 
-### Incomplete Requirements
-- None
+*Status: completed* 
+
+### Completed Items
+
+- Docker file set up and container works 
+- uploaded to github
+- Django implemented
+
+### Uncompleted Items
+
+- Implementation of Swift
 
 ### The summary of the entire project:
 
 Social Media App where users can share their daily activities with friends and gain inspiration of places to travel to from others on their feed.
 
-***
-
-## Sprint 3 Planning
-
-## Technical Flex
-
-<< # >>/5 requirement flexes
-
-## Technical Debt
-
-<< Any requirements from the previous sprint that are using a technical flex >>
-
-None
+## Sprint Planning
 
 ### Requirement Target:
 
-- frontend gui for the login & signup pages
-- backend api to communicate with frontend 
-
+Setup interface and get data models working. Start back end mechanisms.
 
 ### User Stories:
 
-- As a user, I want to have/restrict access to the main features of the app
-- As a user, I want to be able to signup and create my own username
-- As a user, I want to be able to logout and login
-- As a user, I want my posts to appear in chronological order 
-- As a user, I want to be able to edit or delete my posts
-- As a user, I want to be able to save my posts
-
+As a developer, I want to add an interface feature so that the user can view posts showcasing different activities/events.
 
 ### Planning
 
-- sketch the ui for new frontend pages, then begin coding them
+- plan the design of the different interfaces and how they’ll interact. 
+- Figure out data models
+- Start further back end development
 
 ### Action Items
 
-<< A list of things that need to happen in our for our team to complete the sprint >>
-- sketching the ui first
+- Use a design tool to setup UI
+- Hold a meeting to figure out models
+- Use python to create interfaces
 
 ### Issues and Risks
-
-<< A list of potential obstacles that could keep us from completing the sprint and what's being done about them >>
-
--If a user accidently deletes a post the action can not be undone 
-
+ 
+- We make a UI that’s too complex to setup the interface for in our slotted time
+- We could have poor structure in our interface, over-complicating our design
 
 ### Team Work Assignments
-
-- Destiny
-    - will code the frontend gui for the login and signup pages
-- Liz
-    - will code the frontend gui for editing/deleting/saving posts
-- Cole
-    - will code a backend api to store user's information
+ 
+- All design UI and interface
+- All look into and implement data models
