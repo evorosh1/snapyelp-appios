@@ -69,7 +69,7 @@ Connect the front-end to the back-end. Connect the data sets.
 
 ### Issues and Risks
 
-<< A list of potential obstacles that could keep us from completing the sprint and what's being done about them >>
+ - Potential secruity risk if users password is leaked
 
 ### Team Work Assignments
 
