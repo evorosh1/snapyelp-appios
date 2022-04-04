@@ -53,9 +53,9 @@ Connect the front-end to the back-end. Connect the data sets.
 
 ### User Stories
 
-As a user I want to be able to interact with a login page.
-As a user I want to to be able to create a profile with a username and password
-As a user I want to be able to log out of my account
+ - As a user I want to be able to interact with a login page.
+ - As a user I want to to be able to create a profile with a username and password
+ - As a user I want to be able to log out of my account
 
 ### Planning
 
