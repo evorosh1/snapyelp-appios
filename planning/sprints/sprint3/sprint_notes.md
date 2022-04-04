@@ -22,6 +22,8 @@
 ### Sprint Requirements Attempted
 
 - gui for login and signup pages
+- implemented friends list
+- added settings options
 
 ### Completed Requirements
 
