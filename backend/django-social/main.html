@@ -1,0 +1,7 @@
+% for msg in messages:
+% include msg.html
+% replies = msg.replies().count()
+% if replies:
+<a href="{{msg.link}}">({{replies}} replies)</a>
+% end
+% end
