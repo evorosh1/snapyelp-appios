@@ -70,4 +70,4 @@ As a developer, I want the user to be able to be able to create a profile.
 
 ### Team Work Assignments
 
-<< A list of each team member and their works assignments for this sprint >>
+- Liz  - change data displayed on profile view to be from backend
