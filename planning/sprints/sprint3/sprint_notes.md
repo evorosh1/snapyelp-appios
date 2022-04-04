@@ -73,3 +73,4 @@ Connect the front-end to the back-end. Connect the data sets.
 
 - Liz  - change data displayed on profile view to be from backend
 - Destiny - change data displayed on the frontend views to be from backend
+- Cole - continue to work on backend
