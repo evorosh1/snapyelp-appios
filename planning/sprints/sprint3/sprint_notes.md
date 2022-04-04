@@ -30,7 +30,6 @@
 
 ### Incomplete Requirements
 
-- User & Post data models mot connected
 
 ### The summary of the entire project
 
