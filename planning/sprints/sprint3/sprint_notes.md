@@ -2,9 +2,9 @@
 
 *note: replace anything surrounded by << >> and **remove** the << >>*
 
-**Attended**: Destiny
+**Attended**: Destiny, Cole
 
-**DATE**: << meeting date >>
+**DATE**: 4/4/22
 
 ***
 
@@ -26,10 +26,11 @@
 ### Completed Requirements
 
 - gui for login and signup pages are done
+- data models are set up
 
 ### Incomplete Requirements
 
-<< The work that has not been completed in this sprint. Be VERY detailed and specific regarding what isn't working and what needs to be completed >>
+- User & Post data models mot connected
 
 ### The summary of the entire project
 
