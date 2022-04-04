@@ -21,12 +21,12 @@
 
 ### Sprint Requirements Attempted
 
-- gui for login and signup pages
-- implemented friends list
-- added settings options
+- login and signup page gui
+- friends list
+- User configured settings
 
 ### Completed Requirements
-
+**UPDATE**
 - gui for login and signup pages are done
 - data models are set up
 
@@ -43,25 +43,20 @@ Social Media App where users can share their daily activities with friends and g
 
 ## Requirements Flex
 
-<< # >>/5 requirement flexes remaining
-
-## Technical Debt
-
-<< Any requirements from the previous sprint that are using a technical flex >>
+5/5 requirement flexes remaining
 
 ### Requirement Target
 
-Connect the front-end to the back-end. Connect the data sets.
+This feature shall have a login and signup page where the user can create a persistent account for our app
 
 ### User Stories
 
- - As a user I want to be able to interact with a login page.
- - As a user I want to to be able to create a profile with a username and password
- - As a user I want to be able to log out of my account
+ - As a user, I want to be able to signup and create my own username/user profile.
 
 ### Planning
 
-- connect frontend to backend
+- Create Django API
+-  Have Swift frontend able to input User object through login page
 
 ### Action Items
 
