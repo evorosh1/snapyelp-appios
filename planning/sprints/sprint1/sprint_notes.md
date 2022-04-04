@@ -42,23 +42,24 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Requirement Target:
 
-Setup interface and get data models working. Start back end mechanisms.
+Ability to submit a review.
 
 ### User Stories:
 
-As a developer, I want to add an interface feature so that the user can view posts showcasing different activities/events.
+As a client, I want to submit reviews and access them.
 
 ### Planning
 
-- plan the design of the different interfaces and how they’ll interact. 
-- Figure out data models
-- Start further back end development
+- plan the design of the different UI and how they’ll interact
+- Implement database 
+- Allow user interaction
+
 
 ### Action Items
 
 - Use a design tool to setup UI
-- Hold a meeting to figure out models
 - Use python to create interfaces
+
 
 ### Issues and Risks
  

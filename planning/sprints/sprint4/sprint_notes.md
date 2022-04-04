@@ -2,13 +2,13 @@
 
 *note: replace anything surrounded by << >> and **remove** the << >>*
 
-**Attended**: Destiny
+**Attended**: << record the team members in attendance (virtual counts as long as they are participating) >>
 
 **DATE**: << meeting date >>
 
 ***
 
-## Sprint 3 Review
+## Sprint << num >> Review
 
 ### SRS Sections Updated
 
@@ -16,16 +16,15 @@
 
 ### User Story
 
-- As a user, I want to have/restrict access to the main features of the app
-- As a user, I want to be able to signup and create my own username
+<< Corresponding User Stories completed in this sprint >>
 
 ### Sprint Requirements Attempted
 
-- gui for login and signup pages
+<< The corresponding SRS requirement that the team completed in the last sprint >>
 
 ### Completed Requirements
 
-- gui for login and signup pages are done
+<< The work that's been completed in this sprint >>
 
 ### Incomplete Requirements
 
@@ -33,11 +32,11 @@
 
 ### The summary of the entire project
 
-Social Media App where users can share their daily activities with friends and gain inspiration of places to travel to from others on their feed.
+<< A general overview of the entire project >>
 
 ***
 
-## Sprint 4 Planning
+## Sprint << num >> Planning
 
 ## Requirements Flex
 
