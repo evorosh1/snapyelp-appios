@@ -2,9 +2,9 @@
 
 *note: replace anything surrounded by << >> and **remove** the << >>*
 
-**Attended**: Destiny
+**Attended**: Destiny, Cole, Liz
 
-**DATE**: << meeting date >>
+**DATE**: 4/4/22
 
 ***
 
@@ -26,10 +26,10 @@
 ### Completed Requirements
 
 - gui for login and signup pages are done
+- data models are set up
 
 ### Incomplete Requirements
 
-<< The work that has not been completed in this sprint. Be VERY detailed and specific regarding what isn't working and what needs to be completed >>
 
 ### The summary of the entire project
 
@@ -49,11 +49,12 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Requirement Target
 
-<< The corresponding SRS requirement that our team will be complete in next sprint >>
+Connect the front-end to the back-end. Connect the data sets.
 
 ### User Stories
 
-<< Corresponding User Stories >>
+As a developer, I want the user to be able to interact with a login page.
+As a developer, I want the user to be able to be able to create a profile.
 
 ### Planning
 
