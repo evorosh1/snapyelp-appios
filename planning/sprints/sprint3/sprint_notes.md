@@ -62,7 +62,7 @@ As a developer, I want the user to be able to be able to create a profile.
 
 ### Action Items
 
-<< A list of things that need to happen in our for our team to complete the sprint >>
+- Use models to display data pulled from backend
 
 ### Issues and Risks
 
