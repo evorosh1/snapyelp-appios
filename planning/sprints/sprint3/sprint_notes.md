@@ -2,7 +2,7 @@
 
 *note: replace anything surrounded by << >> and **remove** the << >>*
 
-**Attended**: Destiny, Cole
+**Attended**: Destiny, Cole, Liz
 
 **DATE**: 4/4/22
 
@@ -53,7 +53,8 @@ Connect the front-end to the back-end. Connect the data sets.
 
 ### User Stories
 
-As a user, I want to be able to interact with a login page and make a user.
+As a developer, I want the user to be able to interact with a login page.
+As a developer, I want the user to be able to be able to create a profile.
 
 ### Planning
 
@@ -61,7 +62,7 @@ As a user, I want to be able to interact with a login page and make a user.
 
 ### Action Items
 
-<< A list of things that need to happen in our for our team to complete the sprint >>
+- Use models to display data pulled from backend
 
 ### Issues and Risks
 
@@ -69,4 +70,4 @@ As a user, I want to be able to interact with a login page and make a user.
 
 ### Team Work Assignments
 
-<< A list of each team member and their works assignments for this sprint >>
+- Liz  - change data displayed on profile view to be from backend

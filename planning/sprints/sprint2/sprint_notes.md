@@ -1,71 +1,92 @@
-# Sprint 0 Meeting Notes
+# Sprint Meeting Notes
 
-**Attended**: Liz, Destiny, Cole
+*note: replace anything surrounded by << >> and **remove** the << >>*
 
+**Attended**: 
+Liz, Destiny
 ***
 
-## Sprint Review
+## Sprint 2 Review
+
+
 
 ### SRS Sections Updated
 
-N/A
+Requirements, Software Architecture Diagram
 
-### User Story
+###  User Story
 
-As a client, I want an application that I can deploy on any server running Docker
+- As a user, I want a view the just display posts that I have created
+- As a user, I want to see posts my friends have created
+- As a user, I want to add captions and pictures to my posts
 
-### Requirement Implemented
+### Sprint Requirements Attempted
 
-**The application shall minimize required dependencies**
+- sketched basic designs for the app
+- started the coding for the frontend gui
 
-In order to minimize dependencies, we will containerize the application with its dependencies. 
+### Completed Requirements
 
-Limit the dependency to a system that supports Docker containers.
+- implemented the front end gui for the basic structure of the app, the newsfeed page, the create post form, and the user profile page
 
-*Status: completed* 
-
-### Completed Items
-
-- Docker file set up and container works 
-- uploaded to github
-- Django implemented
-
-### Uncompleted Items
-
-- Implementation of Swift
+### Incomplete Requirements
+- None
 
 ### The summary of the entire project:
 
 Social Media App where users can share their daily activities with friends and gain inspiration of places to travel to from others on their feed.
 
-## Sprint Planning
+***
+
+## Sprint 3 Planning
+
+## Technical Flex
+
+<< # >>/5 requirement flexes
+
+## Technical Debt
+
+<< Any requirements from the previous sprint that are using a technical flex >>
+
+None
 
 ### Requirement Target:
 
-Setup interface and get data models working. Start back end mechanisms.
+- frontend gui for the login & signup pages
+- backend api to communicate with frontend 
+
 
 ### User Stories:
 
-As a developer, I want to add an interface feature so that the user can view posts showcasing different activities/events.
+- As a user, I want to have/restrict access to the main features of the app
+- As a user, I want to be able to signup and create my own username
+- As a user, I want to be able to logout and login
+- As a user, I want my posts to appear in chronological order 
+- As a user, I want to be able to edit or delete my posts
+- As a user, I want to be able to save my posts
+
 
 ### Planning
 
-- plan the design of the different interfaces and how they’ll interact. 
-- Figure out data models
-- Start further back end development
+- sketch the ui for new frontend pages, then begin coding them
 
 ### Action Items
 
-- Use a design tool to setup UI
-- Hold a meeting to figure out models
-- Use python to create interfaces
+<< A list of things that need to happen in our for our team to complete the sprint >>
+- sketching the ui first
 
 ### Issues and Risks
- 
-- We make a UI that’s too complex to setup the interface for in our slotted time
-- We could have poor structure in our interface, over-complicating our design
+
+<< A list of potential obstacles that could keep us from completing the sprint and what's being done about them >>
+
+-If a user accidently deletes a post the action can not be undone 
+
 
 ### Team Work Assignments
- 
-- All design UI and interface
-- All look into and implement data models
+
+- Destiny
+    - will code the frontend gui for the login and signup pages
+- Liz
+    - will code the frontend gui for editing/deleting/saving posts
+- Cole
+    - will code a backend api to store user's information
