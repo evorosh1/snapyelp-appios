@@ -49,11 +49,11 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Requirement Target
 
-<< The corresponding SRS requirement that our team will be complete in next sprint >>
+Connect the front-end to the back-end. Connect the data sets.
 
 ### User Stories
 
-<< Corresponding User Stories >>
+As a user, I want to be able to interact with a login page and make a user.
 
 ### Planning
 
