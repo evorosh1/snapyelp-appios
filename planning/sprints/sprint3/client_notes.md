@@ -1,29 +1,41 @@
 
-# Client Update
+# Client Meeting Notes
 
-## Sprint Notes Complete
-N/A
+## Sprint Notes
+
+## SRS Updated
+complete
 
 ## Requirements Attempted in this Sprint
 
-None
+* gui for login and signup pages (solution)
+* implemented friends list (solution)
+* added settings options (solution)
 
 ## Requirements complete
 
-None
+* graphical login and signup pages
+* friends list
+* user configured settings
 
 ## Requirements incomplete
 
-None
+* graphical login and signup pages
+* friends list
+* user configured settings
 
 ## Requirement Flex Remaining
 
-None
+<< 5 / 5 >>
+
+## Requirements Attempted in next Sprint
+
+User must be able to create a persistent account and profile
 
 # Milestone Status
 
-N/A
+Pass
 
-# Requested Changes
+## Requested Changes
 
-None
+Change SRS Requirement: User must be able to creata a persistent account and profile
