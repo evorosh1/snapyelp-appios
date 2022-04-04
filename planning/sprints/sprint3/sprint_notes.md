@@ -59,7 +59,7 @@ Connect the front-end to the back-end. Connect the data sets.
 
 ### Planning
 
-<< Our team's detailed plan to complete the sprint >>
+- connect frontend to backend
 
 ### Action Items
 
@@ -72,3 +72,4 @@ Connect the front-end to the back-end. Connect the data sets.
 ### Team Work Assignments
 
 - Liz  - change data displayed on profile view to be from backend
+- Destiny - change data displayed on the frontend views to be from backend
