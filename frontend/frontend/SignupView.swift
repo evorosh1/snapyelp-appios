@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct SignupView: View {
+    @State var firstname: String = ""
+    @State var lastname: String = ""
     @State var email: String = ""
     @State var username: String = ""
-//    @State var password: String = ""
-    @State var password: String = ""
+    @State var password1: String = ""
+    @State var password2: String = ""
     
     @State var showImagePicker = false
     @State var image: UIImage? = nil
@@ -48,13 +50,13 @@ struct SignupView: View {
                         Image(uiImage: image!)
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 150.0, height: 150.0)
+                            .frame(width: 130.0, height: 130.0)
                             .clipShape(Circle())
                     } else {
                         Image("userprofileplaceholder")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 150.0, height: 150.0)
+                            .frame(width: 130.0, height: 130.0)
                             .clipShape(Circle())
                     }
                     
@@ -69,9 +71,21 @@ struct SignupView: View {
                         }
                     }
                 }
-                .padding(.bottom, 70)
+                .padding(.bottom, 40)
                 
-                VStack {
+                ScrollView {
+                    TextField("First Name", text: $firstname)
+                        .padding()
+                        .background(lightGrayColor)
+                        .cornerRadius(5.0)
+                        .padding(.bottom, 10)
+                    
+                    TextField("Last Name", text: $lastname)
+                        .padding()
+                        .background(lightGrayColor)
+                        .cornerRadius(5.0)
+                        .padding(.bottom, 10)
+                    
                     TextField("Email", text: $email)
                         .padding()
                         .background(lightGrayColor)
@@ -84,14 +98,20 @@ struct SignupView: View {
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
                     
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $password1)
+                        .padding()
+                        .background(lightGrayColor)
+                        .cornerRadius(5.0)
+                        .padding(.bottom, 10)
+                    
+                    SecureField("Re-enter Password", text: $password2)
                         .padding()
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
                 }
                 .padding(.horizontal, 5)
-                .padding(.bottom, 20)
+//                .frame(height: 250.0)
                 
                 Button(action: {
                     showMainView.toggle()
@@ -104,9 +124,10 @@ struct SignupView: View {
                         .background(.blue)
                         .clipShape(Capsule())
                 })
+                .padding(.top, 30)
                 .fullScreenCover(isPresented: $showMainView, content: MainView.init)
             }
-            .padding(.bottom, 60)
+//            .padding(.bottom, 60)
             
         }
         .padding()

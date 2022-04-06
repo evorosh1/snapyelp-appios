@@ -21,12 +21,13 @@ struct LoginView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            Text("Hello!")
+            Text("Login")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-                .padding(.bottom, 20)
+                .padding(.bottom, 30)
+
             
-            VStack(alignment: .center) {
+            /*VStack(alignment: .center) {
                 if image != nil {
                     Image(uiImage: image!)
                         .resizable()
@@ -56,43 +57,45 @@ struct LoginView: View {
                     }
                 }
             }
-            .padding(.bottom, 75)
+            .padding(.bottom, 75)*/
             
-            TextField("Username", text: $username)
-                .padding()
-                .background(lightGrayColor)
-                .cornerRadius(5.0)
-                .padding(.bottom, 20)
-                .padding(.horizontal, 10)
-            
-            SecureField("Password", text: $password)
-                .padding()
-                .background(lightGrayColor)
-                .cornerRadius(5.0)
-                .padding(.bottom, 20)
-                .padding(.horizontal, 10)
-            
-            Button(action: {
-                showMainView.toggle()
-            }, label: {
-                Text("LOGIN")
-                    .padding(.vertical, 20)
-                    .padding(.horizontal, 100)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .background(.blue)
-                    .clipShape(Capsule())
-            })
-            .padding(.bottom, 5)
-            .fullScreenCover(isPresented: $showMainView, content: MainView.init)
+            VStack(alignment: .center) {
+                TextField("Username", text: $username)
+                    .padding()
+                    .background(lightGrayColor)
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 20)
+                
+                SecureField("Password", text: $password)
+                    .padding()
+                    .background(lightGrayColor)
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 20)
+                
+                Button(action: {
+                    showMainView.toggle()
+                }, label: {
+                    Text("LOGIN")
+                        .padding(.vertical, 20)
+                        .padding(.horizontal, 100)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .background(.blue)
+                        .clipShape(Capsule())
+                })
+                .padding(.top, 20)
+                .padding(.bottom, 10)
+                .fullScreenCover(isPresented: $showMainView, content: MainView.init)
 
-            
-            Button(action: {
-                showSignupView.toggle()
-            }, label: {
-                Text("Don't have an acount, signup here")
-            })
-            .fullScreenCover(isPresented: $showSignupView, content: SignupView.init)
+                
+                Button(action: {
+                    showSignupView.toggle()
+                }, label: {
+                    Text("Don't have an acount, signup here")
+                })
+                .fullScreenCover(isPresented: $showSignupView, content: SignupView.init)
+            }
+            .padding(.horizontal, 2)
             
         }
         .padding()
