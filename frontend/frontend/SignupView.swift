@@ -18,7 +18,7 @@ struct SignupView: View {
     @State var showImagePicker = false
     @State var image: UIImage? = nil
     
-    @State var showMainView = false
+    @State var showLoginView = false
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -91,30 +91,34 @@ struct SignupView: View {
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
+                        .textInputAutocapitalization(.never)
                     
                     TextField("Username", text: $username)
                         .padding()
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
+                        .textInputAutocapitalization(.never)
                     
                     SecureField("Password", text: $password1)
                         .padding()
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
+                        .textInputAutocapitalization(.never)
                     
                     SecureField("Re-enter Password", text: $password2)
                         .padding()
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
+                        .textInputAutocapitalization(.never)
                 }
                 .padding(.horizontal, 5)
 //                .frame(height: 250.0)
                 
                 Button(action: {
-                    showMainView.toggle()
+                    PostRegistrationDetails()
                 }, label: {
                     Text("Sign Up")
                         .padding(.vertical, 20)
@@ -125,13 +129,53 @@ struct SignupView: View {
                         .clipShape(Capsule())
                 })
                 .padding(.top, 30)
-                .fullScreenCover(isPresented: $showMainView, content: MainView.init)
+                .disabled(self.username.isEmpty || self.password1.isEmpty || self.password2.isEmpty || self.email.isEmpty)
+                .fullScreenCover(isPresented: $showLoginView, content: LoginView.init)
             }
 //            .padding(.bottom, 60)
             
         }
         .padding()
     }
+    
+    func PostRegistrationDetails() {
+        guard let url = URL(string: "http://0.0.0.0:8000/dj-rest-auth/registration/") else {
+            print("api is down")
+            return
+        }
+        
+        let registrationData = Registration(username: self.username, email: self.email, password1: self.password1, password2: self.password2)
+                
+        guard let encoded = try? JSONEncoder().encode(registrationData) else {
+            print("failed to encode")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("", forHTTPHeaderField: "Authorization")
+        request.httpBody = encoded
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil {
+                print("error: \(String(describing: error))")
+            }
+            
+            if let data = data {
+                if let response = try? JSONDecoder().decode(Registration.self, from: data) {
+                    DispatchQueue.main.async {
+                        print(response)
+                        self.showLoginView = true
+                    }
+                    return
+                }
+            }
+        }.resume()
+    }
+    
+    
 }
 
 struct SignupView_Previews: PreviewProvider {

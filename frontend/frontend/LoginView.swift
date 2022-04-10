@@ -25,39 +25,6 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding(.bottom, 30)
-
-            
-            /*VStack(alignment: .center) {
-                if image != nil {
-                    Image(uiImage: image!)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 150.0, height: 150.0)
-                        .clipShape(Circle())
-                } else {
-                    Image("userprofileplaceholder")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 150.0, height: 150.0)
-                        .clipShape(Circle())
-                }
-                
-                Button(action: {
-                    showImagePicker.toggle()
-                }, label: {
-//                    Image(systemName: "photo.on.rectangle.angled")
-//                        .resizable()
-//                        .frame(width: 30, height: 30)
-                    Text("Change Profile Picture")
-                })
-//                .offset(x: 65, y: -100)
-                .sheet(isPresented: $showImagePicker) {
-                    ImagePicker(sourceType: .photoLibrary) { image in
-                        self.image = image
-                    }
-                }
-            }
-            .padding(.bottom, 75)*/
             
             VStack(alignment: .center) {
                 TextField("Username", text: $username)
@@ -65,15 +32,17 @@ struct LoginView: View {
                     .background(lightGrayColor)
                     .cornerRadius(5.0)
                     .padding(.bottom, 20)
+                    .textInputAutocapitalization(.never)
                 
                 SecureField("Password", text: $password)
                     .padding()
                     .background(lightGrayColor)
                     .cornerRadius(5.0)
                     .padding(.bottom, 20)
+                    .textInputAutocapitalization(.never)
                 
                 Button(action: {
-                    showMainView.toggle()
+                    postLoginCredentials()
                 }, label: {
                     Text("LOGIN")
                         .padding(.vertical, 20)
@@ -85,7 +54,8 @@ struct LoginView: View {
                 })
                 .padding(.top, 20)
                 .padding(.bottom, 10)
-                .fullScreenCover(isPresented: $showMainView, content: MainView.init)
+                .disabled(self.username.isEmpty || self.password.isEmpty)
+                .fullScreenCover(isPresented: $showMainView, content: Temp.init)
 
                 
                 Button(action: {
@@ -101,6 +71,44 @@ struct LoginView: View {
         .padding()
         
     }
+    
+    func postLoginCredentials() {
+        guard let url = URL(string: "http://0.0.0.0:8000/dj-rest-auth/login/") else {
+            print("api is down")
+            return
+        }
+        
+        let loginData = Login(username: self.username, email: "", password: self.password)
+                
+        guard let encoded = try? JSONEncoder().encode(loginData) else {
+            print("failed to encode")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("", forHTTPHeaderField: "Authorization")
+        request.httpBody = encoded
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil {
+                print("error: \(String(describing: error))")
+            }
+            
+            if let data = data {
+                if let response = try? JSONDecoder().decode(Login.self, from: data) {
+                    DispatchQueue.main.async {
+                        print(response)
+                        self.showMainView = true
+                    }
+                    return
+                }
+            }
+        }.resume()
+    }
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
