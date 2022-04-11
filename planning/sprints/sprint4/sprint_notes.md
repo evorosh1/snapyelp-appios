@@ -54,6 +54,8 @@ Social Media App where users can share their daily activities with friends and g
 ### User Stories
 
 - As a user, I want to be able to create posts for my newsfeed
+- As a user, I want to express my thoughts on a post by adding a comment
+- As a user, I want a option to delete a post I’ve created
 
 ### Planning
 
@@ -73,7 +75,7 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Issues and Risks
 
-<< A list of potential obstacles that could keep us from completing the sprint and what's being done about them >>
+- A user could accidently delete there post
 
 ### Team Work Assignments
 
