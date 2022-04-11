@@ -4,27 +4,28 @@
 
 **Attended**: << record the team members in attendance (virtual counts as long as they are participating) >>
 
-**DATE**: << meeting date >>
+**DATE**: 4/11/22
 
 ***
 
-## Sprint << num >> Review
+## Sprint 4 Review
 
 ### SRS Sections Updated
 
-<< List any SRS sections that were updated in the last sprint >>
+- Requirements > Newsfeed GUI
 
 ### User Story
 
-<< Corresponding User Stories completed in this sprint >>
+- As a user, I want to be able to signup and create my own username/user profile.
 
 ### Sprint Requirements Attempted
 
-<< The corresponding SRS requirement that the team completed in the last sprint >>
+- Requirements > Login and Signup Pages Section
 
 ### Completed Requirements
 
-<< The work that's been completed in this sprint >>
+- Created api endpoints for user login and registration
+- Hooked up the frontend login and signup guis to access to the api and submit post requests 
 
 ### Incomplete Requirements
 
@@ -32,15 +33,15 @@
 
 ### The summary of the entire project
 
-<< A general overview of the entire project >>
+Social Media App where users can share their daily activities with friends and gain inspiration of places to travel to from others on their feed.
 
 ***
 
-## Sprint << num >> Planning
+## Sprint 5 Planning
 
 ## Requirements Flex
 
-<< # >>/5 requirement flexes remaining
+5/5 requirement flexes remaining
 
 ## Technical Debt
 
@@ -48,19 +49,27 @@
 
 ### Requirement Target
 
-<< The corresponding SRS requirement that our team will be complete in next sprint >>
+- Newsfeed GUI
 
 ### User Stories
 
-<< Corresponding User Stories >>
+- As a user, I want to be able to create posts for my newsfeed
 
 ### Planning
 
 << Our team's detailed plan to complete the sprint >>
 
+- need to construct a post data model
+- need to create the api endpoints for the following requests:
+  - GET: returns a list of all posts created by the user
+  - POST: saves each post created by the user
+- wire up the frontend guis to access these endpoints
+
 ### Action Items
 
 << A list of things that need to happen in our for our team to complete the sprint >>
+
+- the post data model needs to have a many-to-one relationship with the user data model
 
 ### Issues and Risks
 
