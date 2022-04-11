@@ -69,5 +69,5 @@ This feature shall have a login and signup page where the user can create a pers
 ### Team Work Assignments
 
 - Liz  - change data displayed on profile view to be from backend
-- Destiny - change data displayed on the frontend views to be from backend
+- Destiny - create the api endpoints for the user login and registration, as well as hook up the frontend to access those endpoints 
 - Cole - continue to work on backend
