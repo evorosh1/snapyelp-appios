@@ -69,14 +69,14 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Action Items
 
-<< A list of things that need to happen in our for our team to complete the sprint >>
-
 - the post data model needs to have a many-to-one relationship with the user data model
 
 ### Issues and Risks
 
-- A user could accidently delete there post
+- A user could accidently delete their posts
 
 ### Team Work Assignments
 
-<< A list of each team member and their works assignments for this sprint >>
+Liz - 
+Destiny -
+Cole - continue to work on backend
