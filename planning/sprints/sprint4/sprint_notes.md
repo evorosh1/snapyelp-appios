@@ -77,6 +77,6 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Team Work Assignments
 
-Liz - 
-Destiny -
-Cole - continue to work on backend
+- Liz - 
+- Destiny -
+- Cole - continue to work on backend
