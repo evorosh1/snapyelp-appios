@@ -12,7 +12,7 @@
 
 ### SRS Sections Updated
 
-- Requirements > Newsfeed GUI
+- Requirements > Newsfeed GUI, Form for creating new post, Profile Page
 
 ### User Story
 
@@ -49,11 +49,13 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Requirement Target
 
-- Newsfeed GUI
+- Newsfeed GUI, Form for creating new post, Profile Page
 
 ### User Stories
 
 - As a user, I want to be able to create posts for my newsfeed
+- As a user, I want to be able to view just my posts on my profile page
+- As a user, I want to be able to view posts from other users on my newsfeed
 - As a user, I want to express my thoughts on a post by adding a comment
 - As a user, I want a option to delete a post I’ve created
 
@@ -62,9 +64,12 @@ Social Media App where users can share their daily activities with friends and g
 << Our team's detailed plan to complete the sprint >>
 
 - need to construct a post data model
-- need to create the api endpoints for the following requests:
-  - GET: returns a list of all posts created by the user
-  - POST: saves each post created by the user
+- need to create the following api endpoints
+  - newsfeed
+    - GET: returns a list of all posts created all users
+  - profile
+    - GET: returns a list of all posts created by the user
+    - POST: saves each post created by the user
 - wire up the frontend guis to access these endpoints
 
 ### Action Items
@@ -78,5 +83,5 @@ Social Media App where users can share their daily activities with friends and g
 ### Team Work Assignments
 
 - Liz - 
-- Destiny -
+- Destiny - 
 - Cole - continue to work on backend
