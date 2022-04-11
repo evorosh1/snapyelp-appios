@@ -16,21 +16,14 @@ struct User: Codable, Hashable {
     let last_name: String
 }
 
-//{
-//    "key": "0d8db86b6c8c162c421420eec52310f758c27fa7"
-//}
-
-
 struct Registration: Codable, Hashable {
     let username: String
     let email: String
-    let password1: String
-    let password2: String
+    let password: String
 }
 
 struct Login: Codable, Hashable {
     let username: String
-    let email: String
     let password: String
 }
 

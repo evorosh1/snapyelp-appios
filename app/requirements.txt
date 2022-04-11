@@ -1,5 +1,5 @@
 Django>=3.0,<4.0
 djangorestframework
 # Pillow
-dj-rest-auth
-dj-rest-auth[with_social]
+# dj-rest-auth
+# dj-rest-auth[with_social]

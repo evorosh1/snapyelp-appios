@@ -12,8 +12,7 @@ struct SignupView: View {
     @State var lastname: String = ""
     @State var email: String = ""
     @State var username: String = ""
-    @State var password1: String = ""
-    @State var password2: String = ""
+    @State var password: String = ""
     
     @State var showImagePicker = false
     @State var image: UIImage? = nil
@@ -100,14 +99,7 @@ struct SignupView: View {
                         .padding(.bottom, 10)
                         .textInputAutocapitalization(.never)
                     
-                    SecureField("Password", text: $password1)
-                        .padding()
-                        .background(lightGrayColor)
-                        .cornerRadius(5.0)
-                        .padding(.bottom, 10)
-                        .textInputAutocapitalization(.never)
-                    
-                    SecureField("Re-enter Password", text: $password2)
+                    SecureField("Password", text: $password)
                         .padding()
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
@@ -129,7 +121,7 @@ struct SignupView: View {
                         .clipShape(Capsule())
                 })
                 .padding(.top, 30)
-                .disabled(self.username.isEmpty || self.password1.isEmpty || self.password2.isEmpty || self.email.isEmpty)
+                .disabled(self.username.isEmpty || self.password.isEmpty || self.email.isEmpty)
                 .fullScreenCover(isPresented: $showLoginView, content: LoginView.init)
             }
 //            .padding(.bottom, 60)
@@ -139,12 +131,12 @@ struct SignupView: View {
     }
     
     func PostRegistrationDetails() {
-        guard let url = URL(string: "http://0.0.0.0:8000/dj-rest-auth/registration/") else {
+        guard let url = URL(string: "http://0.0.0.0:8000/register/") else {
             print("api is down")
             return
         }
         
-        let registrationData = Registration(username: self.username, email: self.email, password1: self.password1, password2: self.password2)
+        let registrationData = Registration(username: self.username, email: self.email, password: self.password)
                 
         guard let encoded = try? JSONEncoder().encode(registrationData) else {
             print("failed to encode")
@@ -155,7 +147,6 @@ struct SignupView: View {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.addValue("", forHTTPHeaderField: "Authorization")
         request.httpBody = encoded
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -167,7 +158,7 @@ struct SignupView: View {
                 if let response = try? JSONDecoder().decode(Registration.self, from: data) {
                     DispatchQueue.main.async {
                         print(response)
-                        self.showLoginView = true
+                        self.showLoginView.toggle()
                     }
                     return
                 }
