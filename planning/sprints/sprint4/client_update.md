@@ -3,19 +3,25 @@
 
 ## Sprint Notes
 
+Complete
+
 ## SRS Updated
 
+Complete
 
 ## Requirements Attempted in this Sprint
 
-
+* Created api endpoints for user login and registration
+* Hooked up the frontend login and signup guis to access to the api and submit post requests
 
 ## Requirements complete
 
+* Created api endpoints for user login and registration
+* Hooked up the frontend login and signup guis to access to the api and submit post requests
 
 ## Requirements incomplete
 
-<< TBD >>
+None
 
 ## Requirement Flex Remaining
 
@@ -23,10 +29,14 @@
 
 ## Requirements Attempted in next Sprint
 
-<< TBD >>
+* Newsfeed GUI
+* Form for creating new post
+* Profile Page
 
 # Milestone Status
 
-<< Pass/Fail >>
+Pass
 
 ## Requested Changes
+
+None
