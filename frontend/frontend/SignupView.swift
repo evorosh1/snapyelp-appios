@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct SignupView: View {
-    @State var firstname: String = ""
-    @State var lastname: String = ""
+    @State var first_name: String = ""
+    @State var last_name: String = ""
     @State var email: String = ""
     @State var username: String = ""
     @State var password: String = ""
+    @State var confirm_password: String = ""
     
     @State var showImagePicker = false
     @State var image: UIImage? = nil
@@ -39,7 +40,7 @@ struct SignupView: View {
             Spacer()
             
             VStack(alignment: .center) {
-                Text("Resgister")
+                Text("Register")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                     .padding(.bottom, 20)
@@ -73,13 +74,13 @@ struct SignupView: View {
                 .padding(.bottom, 40)
                 
                 ScrollView {
-                    TextField("First Name", text: $firstname)
+                    TextField("First Name", text: $first_name)
                         .padding()
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
                     
-                    TextField("Last Name", text: $lastname)
+                    TextField("Last Name", text: $last_name)
                         .padding()
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
@@ -105,12 +106,19 @@ struct SignupView: View {
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
                         .textInputAutocapitalization(.never)
+
+                    SecureField("Confirm Password", text: $confirm_password)
+                        .padding()
+                        .background(lightGrayColor)
+                        .cornerRadius(5.0)
+                        .padding(.bottom, 10)
+                        .textInputAutocapitalization(.never)
                 }
                 .padding(.horizontal, 5)
-//                .frame(height: 250.0)
+                .frame(height: 300.0)
                 
                 Button(action: {
-                    PostRegistrationDetails()
+                    postSignupData()
                 }, label: {
                     Text("Sign Up")
                         .padding(.vertical, 20)
@@ -120,23 +128,23 @@ struct SignupView: View {
                         .background(.blue)
                         .clipShape(Capsule())
                 })
-                .padding(.top, 30)
-                .disabled(self.username.isEmpty || self.password.isEmpty || self.email.isEmpty)
+                .padding(.top, 40)
+                .disabled(self.first_name.isEmpty || self.last_name.isEmpty || self.username.isEmpty || self.email.isEmpty || self.password.isEmpty || self.confirm_password.isEmpty)
                 .fullScreenCover(isPresented: $showLoginView, content: LoginView.init)
             }
-//            .padding(.bottom, 60)
+            .padding(.bottom, 10)
             
         }
         .padding()
     }
     
-    func PostRegistrationDetails() {
+    func postSignupData() {
         guard let url = URL(string: "http://0.0.0.0:8000/register/") else {
             print("api is down")
             return
         }
         
-        let registrationData = Registration(username: self.username, email: self.email, password: self.password)
+        let registrationData = RegisterModel(first_name: self.first_name, last_name: self.last_name, username: self.username, email: self.email, password: self.password, confirm_password: self.confirm_password)
                 
         guard let encoded = try? JSONEncoder().encode(registrationData) else {
             print("failed to encode")
@@ -155,7 +163,7 @@ struct SignupView: View {
             }
             
             if let data = data {
-                if let response = try? JSONDecoder().decode(Registration.self, from: data) {
+                if let response = try? JSONDecoder().decode(RegisterModel.self, from: data) {
                     DispatchQueue.main.async {
                         print(response)
                         self.showLoginView.toggle()

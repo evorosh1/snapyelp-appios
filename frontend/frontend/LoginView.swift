@@ -43,7 +43,7 @@ struct LoginView: View {
                     .textInputAutocapitalization(.never)
                 
                 Button(action: {
-                    postLoginCredentials()
+                    postLoginData()
                 }, label: {
                     Text("LOGIN")
                         .padding(.vertical, 20)
@@ -73,13 +73,13 @@ struct LoginView: View {
         
     }
     
-    func postLoginCredentials() {
+    func postLoginData() {
         guard let url = URL(string: "http://0.0.0.0:8000/login/") else {
             print("api is down")
             return
         }
         
-        let loginData = Login(username: self.username, password: self.password)
+        let loginData = LoginModel(username: self.username, password: self.password)
                 
         guard let encoded = try? JSONEncoder().encode(loginData) else {
             print("failed to encode")
@@ -98,7 +98,7 @@ struct LoginView: View {
             }
             
             if let data = data {
-                if let response = try? JSONDecoder().decode(Login.self, from: data) {
+                if let response = try? JSONDecoder().decode(LoginModel.self, from: data) {
                     DispatchQueue.main.async {
                         print(response)
                         self.showTempView.toggle()

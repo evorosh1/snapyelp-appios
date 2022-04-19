@@ -8,21 +8,16 @@
 import Foundation
 
 
-struct User: Codable, Hashable {
-    let pk: Int
-    let username: String
-    let email: String
+struct RegisterModel: Codable, Hashable {
     let first_name: String
     let last_name: String
-}
-
-struct Registration: Codable, Hashable {
     let username: String
     let email: String
     let password: String
+    let confirm_password: String
 }
 
-struct Login: Codable, Hashable {
+struct LoginModel: Codable, Hashable {
     let username: String
     let password: String
 }
