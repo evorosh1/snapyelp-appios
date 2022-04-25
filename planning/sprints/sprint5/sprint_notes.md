@@ -21,7 +21,7 @@ Requirements > Profile GUI
 << Corresponding User Stories completed in this sprint >>
 
 - As a user, I want to be able to signup and create my own user profile
-- As a user, I want to be able to view all of my profile data
+- As a user, I want to be able to view or update all of my profile data
 
 ### Sprint Requirements Attempted
 
