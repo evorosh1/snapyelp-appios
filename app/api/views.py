@@ -1,3 +1,4 @@
+import profile
 from .models import Profile
 from .serializers import LoginSerializer, ProfileSerializer, RegisterSerializer
 from rest_framework.views import APIView
@@ -10,7 +11,10 @@ from rest_framework.exceptions import AuthenticationFailed
 
 # Create your views here.
 
-class ListUserDetails(APIView):
+class ProfileDetails(APIView):
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    
     def get(self, request):
         token = request.COOKIES.get('token')
         if not token:
@@ -20,6 +24,23 @@ class ListUserDetails(APIView):
         serializer = ProfileSerializer(profile)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+    def patch(self, request):
+        # get the token
+        token = request.COOKIES.get('token')
+        if not token:
+            raise AuthenticationFailed
+        # find the user
+        user = Token.objects.get(key=str(token)).user
+        # get the user's profile
+        profile = Profile.objects.filter(user=user).first()
+        print(profile.user)
+
+        serializer = ProfileSerializer(profile, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 class Login(APIView):
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
@@ -28,7 +49,7 @@ class Login(APIView):
             token = Token.objects.get(user=user)
             response = Response()
             response.set_cookie(key='token', value=token, httponly=True)
-            response.data = {'msg':'login successful', 'token':token.key, **serializer.data}
+            response.data = {'msg':'login successful', 'token':token.key}
             response.status = status.HTTP_200_OK
             return response
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -36,13 +57,15 @@ class Login(APIView):
 class Register(APIView):
     def post(self, request):
         request.data['profile'] = {}
-        print(request.data)
         serializer = RegisterSerializer(data=request.data)
-        print(serializer)
         if serializer.is_valid():
             user = serializer.save()
             token = Token.objects.create(user=user)
-            return Response({**serializer.data, 'token':token.key}, status=status.HTTP_201_CREATED)
+            response = Response()
+            response.set_cookie(key='token', value=token, httponly=True)
+            response.data = {'msg':'login successful', 'token':token.key}
+            response.status = status.HTTP_201_CREATED
+            return response
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class Logout(APIView):
@@ -65,3 +88,4 @@ class Logout(APIView):
 # }
 
 # {"username":"test", "password":"test123!"}
+# {"bio":"I love to code!", "profile_photo":"test"}

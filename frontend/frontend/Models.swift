@@ -7,6 +7,7 @@
 
 import Foundation
 
+var token = ""
 
 struct RegisterModel: Codable, Hashable {
     let first_name: String

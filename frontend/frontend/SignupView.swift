@@ -15,10 +15,7 @@ struct SignupView: View {
     @State var password: String = ""
     @State var confirm_password: String = ""
     
-    @State var showImagePicker = false
-    @State var image: UIImage? = nil
-    
-    @State var showLoginView = false
+    @State var showCreateProfileView = false
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -43,37 +40,9 @@ struct SignupView: View {
                 Text("Register")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 30)
                 
-                VStack(alignment: .center) {
-                    if image != nil {
-                        Image(uiImage: image!)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 130.0, height: 130.0)
-                            .clipShape(Circle())
-                    } else {
-                        Image("userprofileplaceholder")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 130.0, height: 130.0)
-                            .clipShape(Circle())
-                    }
-                    
-                    Button(action: {
-                        showImagePicker.toggle()
-                    }, label: {
-                        Text("Select Profile Picture")
-                    })
-                    .sheet(isPresented: $showImagePicker) {
-                        ImagePicker(sourceType: .photoLibrary) { image in
-                            self.image = image
-                        }
-                    }
-                }
-                .padding(.bottom, 40)
-                
-                ScrollView {
+                VStack {
                     TextField("First Name", text: $first_name)
                         .padding()
                         .background(lightGrayColor)
@@ -92,6 +61,7 @@ struct SignupView: View {
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
                         .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
                     
                     TextField("Username", text: $username)
                         .padding()
@@ -99,6 +69,7 @@ struct SignupView: View {
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
                         .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
                     
                     SecureField("Password", text: $password)
                         .padding()
@@ -115,7 +86,6 @@ struct SignupView: View {
                         .textInputAutocapitalization(.never)
                 }
                 .padding(.horizontal, 5)
-                .frame(height: 300.0)
                 
                 Button(action: {
                     postSignupData()
@@ -128,11 +98,11 @@ struct SignupView: View {
                         .background(.blue)
                         .clipShape(Capsule())
                 })
-                .padding(.top, 40)
+                .padding(.top, 20)
                 .disabled(self.first_name.isEmpty || self.last_name.isEmpty || self.username.isEmpty || self.email.isEmpty || self.password.isEmpty || self.confirm_password.isEmpty)
-                .fullScreenCover(isPresented: $showLoginView, content: LoginView.init)
+                .fullScreenCover(isPresented: $showCreateProfileView, content: CreateProfileView.init)
             }
-            .padding(.bottom, 10)
+            .padding(.bottom, 50)
             
         }
         .padding()
@@ -144,29 +114,36 @@ struct SignupView: View {
             return
         }
         
-        let registrationData = RegisterModel(first_name: self.first_name, last_name: self.last_name, username: self.username, email: self.email, password: self.password, confirm_password: self.confirm_password)
-                
-        guard let encoded = try? JSONEncoder().encode(registrationData) else {
-            print("failed to encode")
-            return
-        }
+        let parameters: [String: Any] = ["first_name": self.first_name, "last_name": self.last_name, "username": self.username, "email": self.email, "password": self.password, "confirm_password": self.confirm_password]
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = encoded
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
         
         URLSession.shared.dataTask(with: request) { data, response, error in
-            if error != nil {
-                print("error: \(String(describing: error))")
+            if let error = error {
+              print("error with post request: \(error.localizedDescription)")
+              return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                print("unexpected status code: \(String(describing: response))")
+              return
             }
             
             if let data = data {
-                if let response = try? JSONDecoder().decode(RegisterModel.self, from: data) {
+                if let response = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     DispatchQueue.main.async {
                         print(response)
-                        self.showLoginView.toggle()
+                        token = response["token"] as! String
+                        self.showCreateProfileView.toggle()
                     }
                     return
                 }

@@ -34,6 +34,7 @@ struct LoginView: View {
                     .cornerRadius(5.0)
                     .padding(.bottom, 20)
                     .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                 
                 SecureField("Password", text: $password)
                     .padding()
@@ -79,28 +80,37 @@ struct LoginView: View {
             return
         }
         
-        let loginData = LoginModel(username: self.username, password: self.password)
-                
-        guard let encoded = try? JSONEncoder().encode(loginData) else {
-            print("failed to encode")
-            return
-        }
+        let parameters: [String: Any] = ["username": self.username, "password": self.password]
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = encoded
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
         
         URLSession.shared.dataTask(with: request) { data, response, error in
-            if error != nil {
-                print("error: \(String(describing: error))")
+            if let error = error {
+              print("error with post request: \(error.localizedDescription)")
+              return
             }
             
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                print("unexpected status code: \(String(describing: response))")
+              return
+            }
+            
+            print(httpResponse)
+            
             if let data = data {
-                if let response = try? JSONDecoder().decode(LoginModel.self, from: data) {
+                if let response = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     DispatchQueue.main.async {
                         print(response)
+                        token = response["token"] as! String
                         self.showTempView.toggle()
                     }
                     return
