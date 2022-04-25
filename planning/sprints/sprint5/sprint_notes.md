@@ -50,7 +50,7 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Requirement Target
 
-<< The corresponding SRS requirement that our team will be complete in next sprint >>
+Deleting Posts, Location
 
 ### User Stories
 
