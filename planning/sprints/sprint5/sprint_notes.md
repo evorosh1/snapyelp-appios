@@ -12,33 +12,25 @@
 
 ### SRS Sections Updated
 
-<< List any SRS sections that were updated in the last sprint >>
-
 Requirements > Profile GUI
 
 ### User Story
-
-<< Corresponding User Stories completed in this sprint >>
 
 - As a user, I want to be able to signup and create my own user profile
 - As a user, I want to be able to view or update all of my profile data
 
 ### Sprint Requirements Attempted
 
-<< The corresponding SRS requirement that the team completed in the last sprint >>
-
 Requirements > Login and Signup pages
 
 ### Completed Requirements
-
-<< The work that's been completed in this sprint >>
 
 - updated the login and register api endpoints; both endpoints now works with token authentication
 - added new endpoints that allows for fetching and updating of existing user profile data
 
 ### Incomplete Requirements
 
-<< The work that has not been completed in this sprint. Be VERY detailed and specific regarding what isn't working and what needs to be completed >>
+- api endpoint for fetching and posting posts
 
 ### The summary of the entire project
 
@@ -50,11 +42,11 @@ Social Media App where users can share their daily activities with friends and g
 
 ## Requirements Flex
 
-<< # >>/5 requirement flexes remaining
+4/5 requirement flexes remaining
 
 ## Technical Debt
 
-<< Any requirements from the previous sprint that are using a technical flex >>
+- api endpoint for fetching posts and creating posts
 
 ### Requirement Target
 
@@ -67,11 +59,16 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Planning
 
-<< Our team's detailed plan to complete the sprint >>
+- need to construct a post data model
+- need to create the following api endpoints
+  - account/posts
+    - GET: returns a list of all posts created by all users
+    - POST: saves each post created by the user
+- wire up the frontend guis to access these endpoints
 
 ### Action Items
 
-<< A list of things that need to happen in our for our team to complete the sprint >>
+- we need to finish the requirements from last week 
 
 ### Issues and Risks
 
