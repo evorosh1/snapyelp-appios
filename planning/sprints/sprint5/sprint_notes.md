@@ -50,7 +50,7 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Requirement Target
 
-Deleting Posts, Location
+Post Interactions, Interactive Map
 
 ### User Stories
 
