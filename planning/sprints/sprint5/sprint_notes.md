@@ -62,7 +62,8 @@ Social Media App where users can share their daily activities with friends and g
 
 ### User Stories
 
-<< Corresponding User Stories >>
+- As a user, I want to be able to able to delete my account
+- As a user, I want to be able to able to add a location to my posts
 
 ### Planning
 
