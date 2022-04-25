@@ -2,29 +2,39 @@
 
 *note: replace anything surrounded by << >> and **remove** the << >>*
 
-**Attended**: << record the team members in attendance (virtual counts as long as they are participating) >>
+**Attended**: Destiny
 
-**DATE**: << meeting date >>
+**DATE**: 4/25/22
 
 ***
 
-## Sprint << num >> Review
+## Sprint 5 Review
 
 ### SRS Sections Updated
 
 << List any SRS sections that were updated in the last sprint >>
 
+Requirements > Profile GUI
+
 ### User Story
 
 << Corresponding User Stories completed in this sprint >>
+
+- As a user, I want to be able to signup and create my own user profile
+- As a user, I want to be able to view all of my profile data
 
 ### Sprint Requirements Attempted
 
 << The corresponding SRS requirement that the team completed in the last sprint >>
 
+Requirements > Login and Signup pages
+
 ### Completed Requirements
 
 << The work that's been completed in this sprint >>
+
+- updated the login and register api endpoints; both endpoints now works with token authentication
+- added new endpoints that allows for fetching and updating of existing user profile data
 
 ### Incomplete Requirements
 
@@ -32,11 +42,11 @@
 
 ### The summary of the entire project
 
-<< A general overview of the entire project >>
+Social Media App where users can share their daily activities with friends and gain inspiration of places to travel to from others on their feed.
 
 ***
 
-## Sprint << num >> Planning
+## Sprint 6 Planning
 
 ## Requirements Flex
 
