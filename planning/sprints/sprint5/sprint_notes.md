@@ -2,7 +2,7 @@
 
 *note: replace anything surrounded by << >> and **remove** the << >>*
 
-**Attended**: Destiny
+**Attended**: Destiny, Cole
 
 **DATE**: 4/25/22
 
