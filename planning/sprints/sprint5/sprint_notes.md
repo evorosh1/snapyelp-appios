@@ -72,7 +72,8 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Issues and Risks
 
-<< A list of potential obstacles that could keep us from completing the sprint and what's being done about them >>
+- If not all data is deleted when a user tries to delete their account
+- The location displayed may provide harmful information about user to those with malicous intent 
 
 ### Team Work Assignments
 
