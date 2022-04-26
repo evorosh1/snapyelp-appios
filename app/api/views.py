@@ -1,4 +1,3 @@
-import profile
 from .models import Profile
 from .serializers import LoginSerializer, ProfileSerializer, RegisterSerializer
 from rest_framework.views import APIView
@@ -47,10 +46,9 @@ class Login(APIView):
         if serializer.is_valid():
             user = User.objects.filter(username=request.data["username"]).first()
             token = Token.objects.get(user=user)
-            response = Response()
+            response = Response(status=status.HTTP_200_OK)
             response.set_cookie(key='token', value=token, httponly=True)
             response.data = {'msg':'login successful', 'token':token.key}
-            response.status = status.HTTP_200_OK
             return response
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -61,10 +59,9 @@ class Register(APIView):
         if serializer.is_valid():
             user = serializer.save()
             token = Token.objects.create(user=user)
-            response = Response()
+            response = Response(status=status.HTTP_201_CREATED)
             response.set_cookie(key='token', value=token, httponly=True)
             response.data = {'msg':'login successful', 'token':token.key}
-            response.status = status.HTTP_201_CREATED
             return response
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
