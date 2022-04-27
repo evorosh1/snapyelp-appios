@@ -2,70 +2,82 @@
 
 *note: replace anything surrounded by << >> and **remove** the << >>*
 
-**Attended**: << record the team members in attendance (virtual counts as long as they are participating) >>
+**Attended**: Destiny, Cole
 
-**DATE**: << meeting date >>
+**DATE**: 4/25/22
 
 ***
 
-## Sprint << num >> Review
+## Sprint 5 Review
 
 ### SRS Sections Updated
 
-<< List any SRS sections that were updated in the last sprint >>
+UI To Interact With User Profile
 
 ### User Story
 
-<< Corresponding User Stories completed in this sprint >>
+- As a user, I want to be able to signup and create my own user profile
+- As a user, I want to be able to view or update all of my profile data
 
 ### Sprint Requirements Attempted
 
-<< The corresponding SRS requirement that the team completed in the last sprint >>
+Login and Signup pages
 
 ### Completed Requirements
 
-<< The work that's been completed in this sprint >>
+- updated the login and register api endpoints; both endpoints now works with token authentication
+- added new endpoints that allows for fetching and updating of existing user profile data
 
 ### Incomplete Requirements
 
-<< The work that has not been completed in this sprint. Be VERY detailed and specific regarding what isn't working and what needs to be completed >>
+- the api endpoints for fetching posts and storing newly posts
 
 ### The summary of the entire project
 
-<< A general overview of the entire project >>
+Social Media App where users can share their daily activities with friends and gain inspiration of places to travel to from others on their feed.
 
 ***
 
-## Sprint << num >> Planning
+## Sprint 6 Planning
 
 ## Requirements Flex
 
-<< # >>/5 requirement flexes remaining
+4/5 requirement flexes remaining
 
 ## Technical Debt
 
-<< Any requirements from the previous sprint that are using a technical flex >>
+- api endpoint for fetching posts and storing newly created posts
 
 ### Requirement Target
 
-<< The corresponding SRS requirement that our team will be complete in next sprint >>
+Interactive Map, Permanent storage of post data
 
 ### User Stories
 
-<< Corresponding User Stories >>
+- As a user, I want an map view where I can view different activities/events going on within my proximity
+- As a user, I want to be able to save my posts
 
 ### Planning
 
-<< Our team's detailed plan to complete the sprint >>
+- need to construct a post data model
+- need to create the following api endpoints
+  - account/posts
+    - GET: returns a list of all posts created by all users
+    - POST: saves each post created by the user
+- wire up the frontend guis to access these endpoints
 
 ### Action Items
 
-<< A list of things that need to happen in our for our team to complete the sprint >>
+- finish the incomplete requirements from last week
+- start working on the ui for the interactive map feature
 
 ### Issues and Risks
 
-<< A list of potential obstacles that could keep us from completing the sprint and what's being done about them >>
+- If not all post data is stored, then it affects us rendering the data we need for the map
+- The location displayed may provide harmful information about user to those with malicous intent 
 
 ### Team Work Assignments
 
-<< A list of each team member and their works assignments for this sprint >>
+- Cole: responsible for creating the api endpoints needed for storing new posts and fetching posts
+- Destiny: resposible for the ui for the map
+- Liz:
