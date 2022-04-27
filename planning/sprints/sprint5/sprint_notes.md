@@ -79,5 +79,4 @@ Interactive Map, Permanent storage of post data
 ### Team Work Assignments
 
 - Cole: responsible for creating the api endpoints needed for storing new posts and fetching posts
-- Destiny: resposible for the ui for the map
-- Liz:
+- Destiny and Liz: resposible for the ui for the map
