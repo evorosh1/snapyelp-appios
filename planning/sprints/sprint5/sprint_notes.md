@@ -12,7 +12,7 @@
 
 ### SRS Sections Updated
 
-Requirements > Profile GUI
+UI To Interact With User Profile
 
 ### User Story
 
@@ -21,7 +21,7 @@ Requirements > Profile GUI
 
 ### Sprint Requirements Attempted
 
-Requirements > Login and Signup pages
+Login and Signup pages
 
 ### Completed Requirements
 
@@ -30,7 +30,7 @@ Requirements > Login and Signup pages
 
 ### Incomplete Requirements
 
-- api endpoint for fetching and posting posts
+- the api endpoints for fetching posts and storing newly posts
 
 ### The summary of the entire project
 
@@ -46,16 +46,16 @@ Social Media App where users can share their daily activities with friends and g
 
 ## Technical Debt
 
-- api endpoint for fetching posts and creating posts
+- api endpoint for fetching posts and storing newly created posts
 
 ### Requirement Target
 
-Post Interactions, Interactive Map
+Interactive Map, Permanent storage of post data
 
 ### User Stories
 
-- As a user, I want to be able to able to delete my account
-- As a user, I want to be able to able to add a location to my posts
+- As a user, I want an map view where I can view different activities/events going on within my proximity
+- As a user, I want to be able to save my posts
 
 ### Planning
 
@@ -68,13 +68,16 @@ Post Interactions, Interactive Map
 
 ### Action Items
 
-- we need to finish the requirements from last week 
+- finish the incomplete requirements from last week
+- start working on the ui for the interactive map feature
 
 ### Issues and Risks
 
-- If not all data is deleted when a user tries to delete their account
+- If not all post data is stored, then it affects us rendering the data we need for the map
 - The location displayed may provide harmful information about user to those with malicous intent 
 
 ### Team Work Assignments
 
-<< A list of each team member and their works assignments for this sprint >>
+- Cole: responsible for creating the api endpoints needed for storing new posts and fetching posts
+- Destiny: resposible for the ui for the map
+- Liz:
