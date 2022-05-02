@@ -28,7 +28,7 @@ Interactive Map UI
 
 ### Incomplete Requirements
 
-
+- the api endpoints for fetching posts and storing newly posts
 
 ### The summary of the entire project
 
@@ -49,6 +49,7 @@ Social Media App where users can share their daily activities with friends and g
 
 ### Requirement Target
 
+- View posts from interactive map, Permanent storage of post data
 
 ### User Stories
 
@@ -57,6 +58,13 @@ Social Media App where users can share their daily activities with friends and g
 ### Planning
 
 - need to configure posts onto map
+
+- need to construct a post data model
+- need to create the following api endpoints
+  - account/posts
+    - GET: returns a list of all posts created by all users
+    - POST: saves each post created by the user
+- wire up the frontend guis to access these endpoints
 
 ### Action Items
 
