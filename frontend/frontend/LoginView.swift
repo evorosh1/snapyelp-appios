@@ -10,6 +10,7 @@ import SwiftUI
 let lightGrayColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0)
 
 struct LoginView: View {
+    
     @State var showImagePicker = false
     @State var image: UIImage? = nil
     
@@ -17,7 +18,7 @@ struct LoginView: View {
     @State var password: String = ""
     
     @State var showSignupView = false
-//    @State var showMainView = false
+    @State var showMainView = false
     @State var showTempView = false
     
     var body: some View {
@@ -43,8 +44,9 @@ struct LoginView: View {
                     .padding(.bottom, 20)
                     .textInputAutocapitalization(.never)
                 
-                Button(action: {
-                    postLoginData()
+               /* Button(action: {
+                    //postLoginData()
+                    showMainView.toggle()
                 }, label: {
                     Text("LOGIN")
                         .padding(.vertical, 20)
@@ -57,9 +59,25 @@ struct LoginView: View {
                 .padding(.top, 20)
                 .padding(.bottom, 10)
                 .disabled(self.username.isEmpty || self.password.isEmpty)
-                .fullScreenCover(isPresented: $showTempView, content: Temp.init)
-
+               // .fullScreenCover(isPresented: $showTempView, content: Temp.init)
+                .fullScreenCover(isPresented: $showMainView){MainView()}
+                */
                 
+                Button(action: {
+                    showMainView.toggle()
+                }, label: {
+                    Text("LOGIN")
+                        .padding(.vertical, 20)
+                        .padding(.horizontal, 100)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .background(.blue)
+                        .clipShape(Capsule())
+                })
+                .padding(.top, 20)
+                .padding(.bottom, 10)
+                .fullScreenCover(isPresented: $showMainView, content: MainView.init)
+
                 Button(action: {
                     showSignupView.toggle()
                 }, label: {
@@ -73,7 +91,7 @@ struct LoginView: View {
         .padding()
         
     }
-    
+    /*
     func postLoginData() {
         guard let url = URL(string: "http://0.0.0.0:8000/login/") else {
             print("api is down")
@@ -117,7 +135,7 @@ struct LoginView: View {
                 }
             }
         }.resume()
-    }
+    }*/
     
 }
 
