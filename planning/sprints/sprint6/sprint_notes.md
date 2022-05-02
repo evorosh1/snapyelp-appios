@@ -52,16 +52,11 @@ Social Media App where users can share their daily activities with friends and g
 
 ### User Stories
 
-- As a user, I want my new posts to display on the map
+- As a user, I want an map view where I can view different activities/events going on within my proximity
 
 ### Planning
 
-- need to construct a post data model
-- need to create the following api endpoints
-  - account/posts
-    - GET: returns a list of all posts created by all users
-    - POST: saves each post created by the user
-- wire up the frontend guis to access these endpoints
+- need to configure posts onto map
 
 ### Action Items
 
