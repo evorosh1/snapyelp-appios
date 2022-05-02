@@ -34,9 +34,9 @@ Interactive Map UI
 
 Social Media App where users can share their daily activities with friends and gain inspiration of places to travel to from others on their feed.
 
-## Requirements Flex
+### Requirements Flex
 
-## Overall State of project
+### Overall State of project
 
 - Good 
 
@@ -45,7 +45,7 @@ Social Media App where users can share their daily activities with friends and g
 ## Sprint 7 Planning
 
 
-## Technical Debt
+### Technical Debt
 
 
 ### Requirement Attempted
