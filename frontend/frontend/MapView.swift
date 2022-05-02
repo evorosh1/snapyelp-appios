@@ -8,26 +8,51 @@
 import MapKit
 import SwiftUI
 
+struct MyAnnotationItem: Identifiable {
+    var coordinate: CLLocationCoordinate2D
+    var color: Color?
+    var tint: Color { color ?? .red }
+    let id = UUID()
+}
 
 struct MapView: View {
-    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.7, longitude: -79), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
-
+   
+    @State private var region: MKCoordinateRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: MapDefaults.latitude, longitude: MapDefaults.longitude),
+        span: MKCoordinateSpan(latitudeDelta: MapDefaults.zoom, longitudeDelta: MapDefaults.zoom))
+    
+    let annotationItems = [MyAnnotationItem(
+                            coordinate: CLLocationCoordinate2D(
+                                latitude: MapDefaults.latitude,
+                                longitude: MapDefaults.longitude)),
+                           MyAnnotationItem(
+                            coordinate: CLLocationCoordinate2D(
+                                latitude: 42.1827419,
+                                longitude: -75.92),
+                            color: .yellow),
+                           MyAnnotationItem(
+                            coordinate: CLLocationCoordinate2D(
+                                latitude: 42.0543,
+                                longitude: -75.899),
+                            color: .blue)]
+    
+    private enum MapDefaults {
+        static let latitude = 42.098
+        static let longitude = -75.9180
+        static let zoom = 0.5
+    }
+    
+    
     var body: some View {
-        NavigationView{
-            VStack{
-            Map(coordinateRegion: $region)
-                Button(action: {
-                    withAnimation {
-                    region.span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
-                    }
-                }, label: {
-                    Text("Zoom In")
-                        .bold()
-                        .frame(width: 250, height: 50, alignment: .center)
-                        .background(Color.green)
-                        .cornerRadius(8)
-                        .foregroundColor(.white)
-                })
+        VStack {
+            Text("lat: \(region.center.latitude), long: \(region.center.longitude). Zoom: \(region.span.latitudeDelta)")
+            .font(.caption)
+            .padding()
+            Map(coordinateRegion: $region,
+                interactionModes: .all,
+                showsUserLocation: true,
+                annotationItems: annotationItems) { item in
+                MapMarker(coordinate: item.coordinate)
             }
         }
     }
@@ -41,3 +66,5 @@ struct MapView_Previews: PreviewProvider {
 
 //, showsUserLocation: true, userTrackingMode: .constant(.follow))
    // .frame(width: 400, height: 300
+
+
