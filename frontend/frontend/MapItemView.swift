@@ -9,14 +9,16 @@ import SwiftUI
 
 struct MapItemView: View {
     @Environment(\.presentationMode) var presentationMode
+    var user: User
+    var post: Post
     
     var body: some View {
         VStack {
             HStack(alignment: .center) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Binghamton, NY")
+                    Text("\(post.location)")
                         .font(.headline)
-                    Text("Posted by Destiny")
+                    Text("Posted by \(user.username)")
                         .font(.subheadline)
                 }
                 
@@ -33,39 +35,17 @@ struct MapItemView: View {
             }
             .padding(.horizontal)
             
-            Text(posts[0].reviewText)
+            Text(post.review_text)
                 .padding()
             
-            TabView {
-                Image("restaurant-atlantic-city-nj")
-                    .resizable()
-                    .aspectRatio(0.75, contentMode: .fill)
-                    .overlay(.black.opacity(0.4))
-                    .tag(0)
-                Image("nachos")
-                    .resizable()
-                    .aspectRatio(0.75, contentMode: .fill)
-                    .overlay(.black.opacity(0.4))
-                    .tag(1)
-                Image("steak-tacos")
-                    .resizable()
-                    .aspectRatio(0.75, contentMode: .fill)
-                    .overlay(.black.opacity(0.4))
-                    .tag(2)
-                Image("chicken-platter")
-                    .resizable()
-                    .aspectRatio(0.75, contentMode: .fill)
-                    .overlay(.black.opacity(0.4))
-                    .tag(3)
-            }
-            .tabViewStyle(PageTabViewStyle())
-            
+            post.photosTabView
         }
     }
 }
 
+
 struct MapItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MapItemView()
+        MapItemView(user: users[0], post: users[0].posts[0])
     }
 }

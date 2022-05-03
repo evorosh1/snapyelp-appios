@@ -16,7 +16,7 @@ struct ProfiledisplayView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .center) {
-                Image("profilepic")
+                Image("destiny-profile-pic")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 60.0, height: 60.0)
@@ -55,20 +55,20 @@ struct ProfiledisplayView: View {
                                 .bold()
                                 .font(.title)
                             .padding(.trailing)
-                            ScrollView{
-                                HStack{
-                            Image(friends[0].profilepic)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 35, height: 35)
-                                .clipShape(Circle())
-                                .overlay {
-                                    Circle().stroke(.white, lineWidth: 4)
-                                }
-                            Text(friends[0].name)
-                                .font(.headline)
-                            }
-                                }
+//                            ScrollView{
+//                                HStack {
+//                                    Image(friends[0].profilepic)
+//                                        .resizable()
+//                                        .scaledToFit()
+//                                        .frame(width: 35, height: 35)
+//                                        .clipShape(Circle())
+//                                        .overlay {
+//                                            Circle().stroke(.white, lineWidth: 4)
+//                                        }
+//                                    Text(friends[0].name)
+//                                        .font(.headline)
+//                                    }
+//                                }
                             }
                         }
             //Text ("Friends") //button to see friends list
@@ -77,7 +77,7 @@ struct ProfiledisplayView: View {
         }
         ScrollView {
                     
-                PostView()
+//                PostView()
 
 //             HStack{
 //                Button {

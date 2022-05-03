@@ -15,7 +15,7 @@ struct FrienddisplayView: View {
     
     var body: some View {
         VStack {
-            HStack(alignment: .center) {
+            /*HStack(alignment: .center) {
                 Button(action: {
                     showFriend.toggle()
                 }, label: {
@@ -89,7 +89,7 @@ struct FrienddisplayView: View {
                         .frame(width: 25, height: 24)
                         .foregroundColor(.red)
                 })
-            }
+            }*/
         }
         .padding()
         .overlay {

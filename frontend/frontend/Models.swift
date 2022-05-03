@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 var token = ""
 
@@ -23,54 +24,89 @@ struct LoginModel: Codable, Hashable {
     let password: String
 }
 
-
-struct Post: Codable, Identifiable {
-    var id = UUID()
-    var postType: PostType = ._public
-    var reviewText: String = ""
-    var locationOnBool: Bool = false
-    var imageData: String = ""
+struct User: Codable, Hashable {
+    var username: String = ""
+    var bio: String = ""
+    var posts: [Post] = []
+    var friends: [Friends] = []
     
-    enum PostType: String, Codable {
-        case _public = "Public"
-        case _private = "Private"
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case postType = "post_type"
-        case reviewText = "review_text"
-        case locationOnBool = "location_on"
-        case imageData = "image_data"
+    var profile_pic: String = ""
+    var image: some View {
+        Image(profile_pic)
+            .resizable()
+            .scaledToFill()
+            .frame(width: 50.0, height: 50.0, alignment: .center)
+            .clipShape(Circle())
+            .overlay {
+                Circle().stroke(.white, lineWidth: 2)
+            }
+            .shadow(radius: 7)
     }
 }
 
-struct Friends: Codable, Identifiable {
-    var id = UUID()
-    //var postType: PostType = ._public
-    //var locationOnBool: Bool = false
-    var name: String = ""
-    var profilepic: String = ""
+struct Post: Codable, Hashable {
+    var review_text: String = ""
+    var location: String = ""
+    var liked: Bool = false
+    var total_likes: Int = 0
+    var total_comments: Int = 0
+    var post_type: String = "public"
     
-   /* enum PostType: String, Codable {
-        case _public = "Public"
-        case _private = "Private"
+    var photos: [String] = []
+    var photosTabView: some View {
+        TabView {
+            ForEach(Array(photos.enumerated()), id: \.offset) { index, photo in
+                Image("\(photo)")
+                    .resizable()
+                    .aspectRatio(0.75, contentMode: .fill)
+                    .overlay(.black.opacity(0.2))
+                    .tag(index)
+            }
+        }
+        .tabViewStyle(PageTabViewStyle())
     }
-    */
-    enum CodingKeys: String, CodingKey {
-        //case postType = "post_type"
-        //case locationOnBool = "location_on"
-        case name = "user"
-        case profilepic = "image_data"
+}
+
+struct Friends: Codable, Hashable {
+    var username: String = ""
+    var profile_pic: String = ""
+    var image: some View {
+        Image(profile_pic)
+            .resizable()
+            .scaledToFill()
+            .frame(width: 50.0, height: 50.0)
+            .clipShape(Circle())
+            .overlay {
+                Circle().stroke(.white, lineWidth: 2)
+            }
+            .shadow(radius: 7)
     }
 }
 
 
-var posts: [Post] = [
-    Post(postType: ._public, reviewText: "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️", locationOnBool: true, imageData: "tacos"),
-    Post(postType: ._public, reviewText: "Great Cats, Lots of options", locationOnBool: true, imageData: "humane")
-]
+var users: [User] = load("data.json")
 
-var friends: [Friends] = [
-    Friends(name: "Liz", profilepic: "profilefriend")
+func load<T: Decodable>(_ filename: String) -> T {
+    let data: Data
 
-]
+    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+    else {
+        fatalError("Couldn't find file")
+    }
+
+    do {
+        data = try Data(contentsOf: file)
+    } catch {
+        fatalError("Error: \(error)")
+    }
+
+    do {
+        let decoder = JSONDecoder()
+//        let result = try decoder.decode(T.self, from: data)
+//        print(result)
+        return try decoder.decode(T.self, from: data)
+    } catch {
+        fatalError("failed to parse data")
+    }
+}
+

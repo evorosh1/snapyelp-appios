@@ -10,73 +10,70 @@ import SwiftUI
 struct PostView: View {
     @State var likeButtonBool: Bool = false
     @State var showComments: Bool = false
+    var user: User
+    var post: Post
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack(alignment: .center) {
-                Image("profilepic")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 60.0, height: 60.0)
-                    .clipShape(Circle())
-                    .overlay {
-                        Circle().stroke(.white, lineWidth: 4)
-                    }
-                    .shadow(radius: 7)
+                user.image
+                
                 VStack(alignment: .leading, spacing: 2) {
                     HStack {
-                        Text("Destiny")
+                        Text(user.username)
                             .font(.headline)
                         Spacer()
-                        Image(systemName: posts[0].postType == ._public ? "globe" : "lock.fill")
+                        Image(systemName: post.post_type == "public" ? "globe" : "lock.fill")
                             .foregroundColor(.gray)
                     }
                     
-                    if posts[0].locationOnBool {
-                        Text("Bingamton, NY")
+                    if post.location != "" {
+                        Text(post.location)
                             .font(.subheadline)
                     }
                 }
-                .padding(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                .padding(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, 2.0)
                 
                 Spacer()
             }
             
             Divider()
             
-            Text(posts[0].reviewText)
+            Text(post.review_text)
+                .font(.body)
             
-            if posts[0].imageData != "" {
-                Image(posts[0].imageData)
-                    .resizable()
-                    .scaledToFit()
-            }
-           
-            
+            post.photosTabView
+                .frame(width: nil, height: 450)
+
             Divider()
             
-            HStack {
+            HStack(alignment: .center) {
                 Button(action: {
                     likeButtonBool.toggle()
                 }, label: {
-                    Image(systemName: likeButtonBool ? "hand.thumbsup.fill" : "hand.thumbsup")
-                        .resizable()
-                        .frame(width: 25, height: 25)
+                    HStack(alignment: .center, spacing: 5.0) {
+                        Image(systemName: likeButtonBool || post.liked ? "hand.thumbsup.fill" : "hand.thumbsup")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text("\(likeButtonBool ? post.total_likes + 1 : post.total_likes)")
+                    }
                 })
                 .padding(.trailing)
                 
                 Button(action: {
                     showComments.toggle()
                 }, label: {
-                    Image(systemName: "text.bubble")
-                        .resizable()
-                        .frame(width: 25, height: 25)
+                    HStack(alignment: .center, spacing: 10.0) {
+                        Image(systemName: "text.bubble")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text("\(post.total_comments)")
+                    }
                 })
                 .sheet(isPresented: $showComments) {
                     Text("Comments")
                         .font(.headline)
                 }
-                .padding(.leading)
                 
                 Spacer()
                 
@@ -91,67 +88,12 @@ struct PostView: View {
         .padding()
         .overlay {
             Rectangle().stroke(.gray)
-            
         }
     }
 }
 
-/*struct PostView: View {
-    
-    
-    var body: some View {
-        VStack {
-            HStack(alignment: .center) {
-                Image("profilepic")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 60.0, height: 60.0)
-                    .clipShape(Circle())
-                    .overlay {
-                        Circle().stroke(.white, lineWidth: 4)
-                    }
-                    .shadow(radius: 7)
-                VStack(alignment: .leading) {
-                    Text("Destiny")
-                    HStack {
-                        Text("Bingamton, NY")
-                        Text("o Public")
-                    }
-                }
-                .padding(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-                
-                Spacer()
-            }
-            
-            Divider()
-            
-            Text("The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️")
-            
-            Image("tacos")
-                .resizable()
-                .scaledToFit()
-//                .overlay {
-//                    RoundedRectangle(cornerRadius: 10).stroke(.white)
-//                }
-//                .cornerRadius(10)
-            
-            Divider()
-            
-            HStack {
-                Text("|Like Button|")
-                Spacer()
-                Text("|Comment Button|")
-            }
-        }
-        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-        .overlay {
-            Rectangle().stroke(.gray)
-        }
-    }
-}*/
-
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView()
+        PostView(user: users[0], post: users[0].posts[0])
     }
 }

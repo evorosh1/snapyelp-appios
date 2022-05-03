@@ -40,7 +40,7 @@ struct Newsfeed: View {
                             .resizable()
                             .frame(width: 25, height: 25)
                     })
-                    .fullScreenCover(isPresented: $showNewPostForm, content: NewPostForm.init)
+                    .fullScreenCover(isPresented: $showNewPostForm, content: CreatePostForm.init)
                 }
             }
             .padding(.horizontal)
@@ -49,65 +49,18 @@ struct Newsfeed: View {
             
             ScrollView {
                 VStack(spacing: 10) {
-                    PostView()
-                    FriendView()
+                    ForEach(users, id: \.self) { user in
+                        ForEach(user.posts, id: \.self) { post in
+                            PostView(user: user, post: post)
+                        }
+                    }
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal)
+                .frame(width: nil)
             }
             .padding(.vertical)
         }
     }
 }
-
-
-/*struct Newsfeed: View {
-    @State private var showingProfile = false
-    var body: some View {
-        VStack {
-            VStack(alignment: .center) {
-                HStack {
-                    Text("AppName")
-                        .font(.headline)
-                        .multilineTextAlignment(.leading)
-                    Spacer()
-                    Text("Add Post")
-                }
-                Divider()
-            }
-            .padding(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/)
-            PostView()
-            
-            VStack {
-                Divider()
-                
-                HStack {
-                    Text("| Map Icon |")
-                    Spacer()
-                    Button {
-                        showingProfile.toggle()
-                    } label: {
-                        Label("Profile", systemImage: "person.crop.circle")
-                            .scaledToFill()
-                            .frame(width: 45.0, height: 45.0)
-                            .clipShape(Circle())
-                            .overlay {
-                                Circle().stroke(.white, lineWidth: 2)
-                            }
-                            .shadow(radius: 7)
-                    }
-                }
-            }
-            .sheet(isPresented: $showingProfile) {
-                           ProfileView()
-                       }
-
-
-            .padding(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/)
-        }
-        .padding()
-    }
-}*/
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

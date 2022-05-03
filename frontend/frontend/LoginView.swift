@@ -19,7 +19,6 @@ struct LoginView: View {
     
     @State var showSignupView = false
     @State var showMainView = false
-    @State var showTempView = false
     
     var body: some View {
         VStack(alignment: .center) {
@@ -44,7 +43,7 @@ struct LoginView: View {
                     .padding(.bottom, 20)
                     .textInputAutocapitalization(.never)
                 
-               /* Button(action: {
+               Button(action: {
                     //postLoginData()
                     showMainView.toggle()
                 }, label: {
@@ -58,24 +57,7 @@ struct LoginView: View {
                 })
                 .padding(.top, 20)
                 .padding(.bottom, 10)
-                .disabled(self.username.isEmpty || self.password.isEmpty)
-               // .fullScreenCover(isPresented: $showTempView, content: Temp.init)
-                .fullScreenCover(isPresented: $showMainView){MainView()}
-                */
-                
-                Button(action: {
-                    showMainView.toggle()
-                }, label: {
-                    Text("LOGIN")
-                        .padding(.vertical, 20)
-                        .padding(.horizontal, 100)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .background(.blue)
-                        .clipShape(Capsule())
-                })
-                .padding(.top, 20)
-                .padding(.bottom, 10)
+//                .disabled(self.username.isEmpty || self.password.isEmpty)
                 .fullScreenCover(isPresented: $showMainView, content: MainView.init)
 
                 Button(action: {
@@ -91,7 +73,7 @@ struct LoginView: View {
         .padding()
         
     }
-    /*
+    
     func postLoginData() {
         guard let url = URL(string: "http://0.0.0.0:8000/login/") else {
             print("api is down")
@@ -129,13 +111,13 @@ struct LoginView: View {
                     DispatchQueue.main.async {
                         print(response)
                         token = response["token"] as! String
-                        self.showTempView.toggle()
+                        self.showMainView.toggle()
                     }
                     return
                 }
             }
         }.resume()
-    }*/
+    }
     
 }
 

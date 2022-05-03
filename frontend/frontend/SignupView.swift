@@ -88,7 +88,8 @@ struct SignupView: View {
                 .padding(.horizontal, 5)
                 
                 Button(action: {
-                    postSignupData()
+//                    postSignupData()
+                    showCreateProfileView.toggle()
                 }, label: {
                     Text("Sign Up")
                         .padding(.vertical, 20)
@@ -99,8 +100,8 @@ struct SignupView: View {
                         .clipShape(Capsule())
                 })
                 .padding(.top, 20)
-                .disabled(self.first_name.isEmpty || self.last_name.isEmpty || self.username.isEmpty || self.email.isEmpty || self.password.isEmpty || self.confirm_password.isEmpty)
-                .fullScreenCover(isPresented: $showCreateProfileView, content: CreateProfileView.init)
+//                .disabled(self.first_name.isEmpty || self.last_name.isEmpty || self.username.isEmpty || self.email.isEmpty || self.password.isEmpty || self.confirm_password.isEmpty)
+                .fullScreenCover(isPresented: $showCreateProfileView, content: CreateProfileForm.init)
             }
             .padding(.bottom, 50)
             

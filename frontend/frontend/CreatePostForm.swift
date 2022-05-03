@@ -12,12 +12,12 @@ enum PostType: String, Codable {
     case _private = "Private"
 }
 
-struct NewPostForm: View {
+struct CreatePostForm: View {
     @Environment(\.presentationMode) var presentationMode
-//    @State var postObject: Post = Post()
     @State var postType: PostType = ._public
-    @State var reviewText = ""
-    @State var locationOnBool = false
+    @State var review_text = ""
+//    @State var locationOn = false
+    @State var location = ""
     @State var imageData = ""
     @State var showImagePicker = false
     @State var image: UIImage? = nil
@@ -34,14 +34,14 @@ struct NewPostForm: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        locationOnBool.toggle()
-                    }, label: {
-                        Image(systemName: locationOnBool ? "location.fill" : "location")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                    })
-                    .padding(.trailing)
+//                    Button(action: {
+//                        locationOn.toggle()
+//                    }, label: {
+//                        Image(systemName: locationOn ? "location.fill" : "location")
+//                            .resizable()
+//                            .frame(width: 25, height: 25)
+//                    })
+//                    .padding(.trailing)
                     
                     Button(action: {
                         showImagePicker.toggle()
@@ -73,18 +73,22 @@ struct NewPostForm: View {
                 .padding(.vertical, 5)
                 
                 List {
-                    Section(header: Text("Select Post Setting")) {
-                        Picker("Select Post Setting", selection: $postType) {
+                    Section(header: Text("Set Post Type")) {
+                        Picker("Set Post Type", selection: $postType) {
                             Text("Public").tag(PostType._public)
                             Text("Private").tag(PostType._private)
                         }
                         .pickerStyle(SegmentedPickerStyle())
                     }
                     
-                    Section(header: Text("Write a review...")) {
-                        TextEditor(text: $reviewText)
+                    Section(header: Text("Write a Review")) {
+                        TextEditor(text: $review_text)
                             .font(.body)
                             .frame(height: 300)
+                    }
+                    
+                    Section(header: Text("Add Location")) {
+                        TextField("", text: $location)
                     }
                 }
                 .listStyle(InsetGroupedListStyle())
@@ -118,8 +122,8 @@ struct NewPostForm: View {
     }
 }
 
-struct NewPostForm_Previews: PreviewProvider {
+struct CreatePostForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewPostForm()
+        CreatePostForm()
     }
 }

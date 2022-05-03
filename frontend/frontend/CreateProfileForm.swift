@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateProfileView: View {
+struct CreateProfileForm: View {
     @State var showImagePicker = false
     @State var image: UIImage? = nil
     @State var imageData = ""
@@ -69,7 +69,8 @@ struct CreateProfileView: View {
             .padding(.horizontal, 3)
             
             Button(action: {
-                postProfileData()
+//                postProfileData()
+                showMainView.toggle()
             }, label: {
                 Text("Done")
                     .padding(.vertical, 20)
@@ -80,7 +81,7 @@ struct CreateProfileView: View {
                     .clipShape(Capsule())
             })
             .padding(.top, 40)
-            .disabled(self.bio.isEmpty || self.image == nil)
+//            .disabled(self.bio.isEmpty || self.image == nil)
             .fullScreenCover(isPresented: $showMainView, content: MainView.init)
 
         }
@@ -133,8 +134,8 @@ struct CreateProfileView: View {
     }
 }
 
-struct CreateProfileView_Previews: PreviewProvider {
+struct CreateProfileForm_Previews: PreviewProvider {
     static var previews: some View {
-        CreateProfileView()
+        CreateProfileForm()
     }
 }
