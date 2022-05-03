@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48901C3A2820242700631D3A /* pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48901C392820242700631D3A /* pin.swift */; };
 		48940F3327F36C1E00A31C6E /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48940F3227F36C1E00A31C6E /* Friend.swift */; };
 		48940F3527F36CE200A31C6E /* FrienddisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48940F3427F36CE200A31C6E /* FrienddisplayView.swift */; };
 		48940F3727F36FDD00A31C6E /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48940F3627F36FDD00A31C6E /* FriendView.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48901C392820242700631D3A /* pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pin.swift; sourceTree = "<group>"; };
 		48940F3227F36C1E00A31C6E /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		48940F3427F36CE200A31C6E /* FrienddisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienddisplayView.swift; sourceTree = "<group>"; };
 		48940F3627F36FDD00A31C6E /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				D4E6B99927E8D9CA002E7530 /* MainView.swift */,
 				D4E3DA56281F3ED000C400D5 /* MapItemView.swift */,
 				48ED2AAF281FFE070099EC1D /* MapView.swift */,
+				48901C392820242700631D3A /* pin.swift */,
 				D44704AC27F39D6E007A54ED /* LoginView.swift */,
 				D4815B53282030F0005B93C2 /* data.json */,
 				D44704AE27F39D8B007A54ED /* SignupView.swift */,
@@ -203,6 +206,7 @@
 				48B90CEC27E8B4BD001D9B1D /* Profile.swift in Sources */,
 				48940F3727F36FDD00A31C6E /* FriendView.swift in Sources */,
 				D4C0154627D3D5AE005654AB /* Newsfeed.swift in Sources */,
+				48901C3A2820242700631D3A /* pin.swift in Sources */,
 				D454DA1527D5AA2000DAB28E /* PostView.swift in Sources */,
 				D4C0154427D3D5AE005654AB /* frontendApp.swift in Sources */,
 				D41E622928160ACB00E07D78 /* CreateProfileForm.swift in Sources */,
