@@ -10,6 +10,7 @@ import SwiftUI
 struct Newsfeed: View {
     @State var showNewPostForm = false
     @State var showSearchField = false
+    @State var search = ""
     
     var body: some View {
         VStack {
@@ -29,8 +30,18 @@ struct Newsfeed: View {
                     })
                     .padding(.trailing)
                     .sheet(isPresented: $showSearchField) {
-                        Text("Search")
-                            .font(.headline)
+                        VStack {
+                            HStack {
+                                TextField("Search...", text: $search)
+                                    .padding()
+                                    .background(lightGrayColor)
+                                    .cornerRadius(5.0)
+                                    .padding(.vertical, 20)
+                                    .padding(.horizontal, 10)
+                                    .textInputAutocapitalization(.never)
+                            }
+                            Spacer()
+                        }
                     }
                     
                     Button(action: {

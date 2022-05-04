@@ -20,8 +20,8 @@
 		D44704AD27F39D6E007A54ED /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44704AC27F39D6E007A54ED /* LoginView.swift */; };
 		D44704AF27F39D8B007A54ED /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44704AE27F39D8B007A54ED /* SignupView.swift */; };
 		D454DA1527D5AA2000DAB28E /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D454DA1427D5AA2000DAB28E /* PostView.swift */; };
-		D4815B54282030F0005B93C2 /* old_data.json in Resources */ = {isa = PBXBuildFile; fileRef = D4815B53282030F0005B93C2 /* old_data.json */; };
 		D4B3640B2822CBC500AA59DC /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D4B3640A2822CBC500AA59DC /* data.json */; };
+		D4B3640D2822CD6600AA59DC /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3640C2822CD6600AA59DC /* CommentsView.swift */; };
 		D4C0154427D3D5AE005654AB /* frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C0154327D3D5AE005654AB /* frontendApp.swift */; };
 		D4C0154627D3D5AE005654AB /* Newsfeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C0154527D3D5AE005654AB /* Newsfeed.swift */; };
 		D4C0154827D3D5B1005654AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C0154727D3D5B1005654AB /* Assets.xcassets */; };
@@ -47,8 +47,8 @@
 		D44704AC27F39D6E007A54ED /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D44704AE27F39D8B007A54ED /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		D454DA1427D5AA2000DAB28E /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
-		D4815B53282030F0005B93C2 /* old_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = old_data.json; path = ../../../Downloads/BuildingListsAndNavigation/Resources/old_data.json; sourceTree = "<group>"; };
 		D4B3640A2822CBC500AA59DC /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		D4B3640C2822CD6600AA59DC /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		D4C0154027D3D5AE005654AB /* frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C0154327D3D5AE005654AB /* frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = frontendApp.swift; sourceTree = "<group>"; };
 		D4C0154527D3D5AE005654AB /* Newsfeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newsfeed.swift; sourceTree = "<group>"; };
@@ -92,12 +92,12 @@
 			isa = PBXGroup;
 			children = (
 				D4C0154527D3D5AE005654AB /* Newsfeed.swift */,
+				D4B3640C2822CD6600AA59DC /* CommentsView.swift */,
 				D4E6B99927E8D9CA002E7530 /* MainView.swift */,
 				D4E3DA56281F3ED000C400D5 /* MapItemView.swift */,
 				48ED2AAF281FFE070099EC1D /* MapView.swift */,
 				48901C392820242700631D3A /* pin.swift */,
 				D44704AC27F39D6E007A54ED /* LoginView.swift */,
-				D4815B53282030F0005B93C2 /* old_data.json */,
 				D4B3640A2822CBC500AA59DC /* data.json */,
 				D44704AE27F39D8B007A54ED /* SignupView.swift */,
 				D41E622828160ACB00E07D78 /* CreateProfileForm.swift */,
@@ -187,7 +187,6 @@
 			files = (
 				D4C0154B27D3D5B1005654AB /* Preview Assets.xcassets in Resources */,
 				D4C0154827D3D5B1005654AB /* Assets.xcassets in Resources */,
-				D4815B54282030F0005B93C2 /* old_data.json in Resources */,
 				D4B3640B2822CBC500AA59DC /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +215,7 @@
 				D41E622928160ACB00E07D78 /* CreateProfileForm.swift in Sources */,
 				D4E6B9A027E8DD48002E7530 /* Models.swift in Sources */,
 				D44704AF27F39D8B007A54ED /* SignupView.swift in Sources */,
+				D4B3640D2822CD6600AA59DC /* CommentsView.swift in Sources */,
 				48940F3527F36CE200A31C6E /* FrienddisplayView.swift in Sources */,
 				48ED2AB0281FFE070099EC1D /* MapView.swift in Sources */,
 				48940F3327F36C1E00A31C6E /* Friend.swift in Sources */,

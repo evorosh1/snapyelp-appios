@@ -71,8 +71,7 @@ struct PostView: View {
                     }
                 })
                 .sheet(isPresented: $showComments) {
-                    Text("Comments")
-                        .font(.headline)
+                    CommentsView(total_comments: post.total_comments)
                 }
                 
                 Spacer()
