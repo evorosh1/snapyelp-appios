@@ -1,0 +1,168 @@
+[
+    {
+        "username": "Destiny",
+        "profile_pic": "destiny-profile-pic",
+        "bio": "",
+        "posts": [{
+            "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
+            "photos": ["tacos-1", "nachos"],
+            "location": "Binghamton, NY",
+            "liked": false,
+            "total_likes": 10,
+            "total_comments": 5,
+            "post_type": "public"
+        }],
+        "friends": [{
+            "username": "Liz",
+            "profile_pic": "liz-profile-pic"
+        }]
+    },
+    {
+        "username": "Andrew",
+        "profile_pic": "profile-pic-1",
+        "bio": "",
+        "posts": [{
+            "review_text": "Let's go Red Sox‼️",
+            "photos": ["baseball-game-1", "baseball-game-2"],
+            "location": "Boston, Massachusetts",
+            "liked": false,
+            "total_likes": 12,
+            "total_comments": 5,
+            "post_type": "public"
+        }],
+        "friends": [{
+            "username": "Destiny",
+            "profile_pic": "destiny-profile-pic"
+        }]
+    },
+    {
+        "username": "Liz",
+        "profile_pic": "liz-profile-pic",
+        "bio": "",
+        "posts": [{
+            "review_text": "Great Cats, Lots of options",
+            "photos": ["humane"],
+            "location": "Binghamton, NY",
+            "liked": false,
+            "total_likes": 12,
+            "total_comments": 5,
+            "post_type": "public"
+        }],
+        "friends": [{
+            "username": "Liz",
+            "profile_pic": "liz-profile-pic"
+        }]
+    },
+    {
+        "username": "Brien",
+        "profile_pic": "profile-pic-4",
+        "bio": "",
+        "posts": [{
+            "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
+            "photos": ["restaurant-atlantic-city-nj", "chicken-platter"],
+            "location": "Atlantic City, NJ",
+            "liked": false,
+            "total_likes": 50,
+            "total_comments": 20,
+            "post_type": "public"
+        }],
+        "friends": [{
+            "username": "Liz",
+            "profile_pic": "liz-profile-pic"
+        }]
+    },
+    {
+        "username": "Jenifer",
+        "profile_pic": "profile-pic-2",
+        "bio": "",
+        "posts": [{
+            "review_text": "This is the best bowling alley in Atlanta",
+            "photos": ["bowling-alley-1", "bowling-alley-2"],
+            "location": "Atlanta, Georgia",
+            "liked": false,
+            "total_likes": 12,
+            "total_comments": 5,
+            "post_type": "public"
+        }],
+        "friends": [{
+            "username": "Liz",
+            "profile_pic": "liz-profile-pic"
+        }]
+    },
+    {
+        "username": "Giles",
+        "profile_pic": "profile-pic-3",
+        "bio": "",
+        "posts": [{
+            "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
+            "photos": ["italian-food-3"],
+            "location": "Austin, Texas",
+            "liked": false,
+            "total_likes": 10,
+            "total_comments": 5,
+            "post_type": "public"
+        }],
+        "friends": [{
+            "username": "Liz",
+            "profile_pic": "liz-profile-pic"
+        }]
+    },
+    {
+        "username": "Tamarra",
+        "profile_pic": "profile-pic-6",
+        "bio": "",
+        "posts": [{
+                "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
+                "photos": ["italian-food-2"],
+                "location": "Miami, Florida",
+                "liked": false,
+                "total_likes": 11,
+                "total_comments": 6,
+                "post_type": "public"
+            },
+            {
+                "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
+                "photos": ["tacos-2", "drinks-1"],
+                "location": "Miami, Florida",
+                "liked": false,
+                "total_likes": 18,
+                "total_comments": 7,
+                "post_type": "public"
+            }
+
+        ],
+        "friends": [{
+            "username": "Liz",
+            "profile_pic": "liz-profile-pic"
+        }]
+    },
+    {
+        "username": "Derek",
+        "profile_pic": "profile-pic-5",
+        "bio": "",
+        "posts": [{
+                "review_text": "The atmosphere was nice and the food is delicious. Highly recommend.",
+                "photos": ["italian-food-1"],
+                "location": "Los Angeles, California",
+                "liked": false,
+                "total_likes": 20,
+                "total_comments": 10,
+                "post_type": "public"
+            },
+            {
+                "review_text": "Enjoyed the show",
+                "photos": ["broadway-show-1"],
+                "location": "New York, NY",
+                "liked": false,
+                "total_likes": 14,
+                "total_comments": 9,
+                "post_type": "public"
+            }
+        ],
+        "friends": [{
+            "username": "Liz",
+            "profile_pic": "liz-profile-pic"
+        }]
+    }
+]
+
