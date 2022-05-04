@@ -31,6 +31,7 @@
 		D4E6B99C27E8DB00002E7530 /* CreatePostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6B99B27E8DB00002E7530 /* CreatePostForm.swift */; };
 		D4E6B99E27E8DB21002E7530 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6B99D27E8DB21002E7530 /* ImagePicker.swift */; };
 		D4E6B9A027E8DD48002E7530 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6B99F27E8DD48002E7530 /* Models.swift */; };
+		D4EA39112823290200D1C790 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA39102823290200D1C790 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		D4E6B99B27E8DB00002E7530 /* CreatePostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostForm.swift; sourceTree = "<group>"; };
 		D4E6B99D27E8DB21002E7530 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		D4E6B99F27E8DD48002E7530 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		D4EA39102823290200D1C790 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C0154527D3D5AE005654AB /* Newsfeed.swift */,
+				D4EA39102823290200D1C790 /* SearchBarView.swift */,
 				D4B3640C2822CD6600AA59DC /* CommentsView.swift */,
 				D4E6B99927E8D9CA002E7530 /* MainView.swift */,
 				D4E3DA56281F3ED000C400D5 /* MapItemView.swift */,
@@ -216,6 +219,7 @@
 				D4E6B9A027E8DD48002E7530 /* Models.swift in Sources */,
 				D44704AF27F39D8B007A54ED /* SignupView.swift in Sources */,
 				D4B3640D2822CD6600AA59DC /* CommentsView.swift in Sources */,
+				D4EA39112823290200D1C790 /* SearchBarView.swift in Sources */,
 				48940F3527F36CE200A31C6E /* FrienddisplayView.swift in Sources */,
 				48ED2AB0281FFE070099EC1D /* MapView.swift in Sources */,
 				48940F3327F36C1E00A31C6E /* Friend.swift in Sources */,
