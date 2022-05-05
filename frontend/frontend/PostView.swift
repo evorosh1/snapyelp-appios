@@ -10,6 +10,7 @@ import SwiftUI
 struct PostView: View {
     @State var likeButtonBool: Bool = false
     @State var showComments: Bool = false
+    @State var showNewPostForm =  false
     var user: User
     var post: Post
     
@@ -42,8 +43,10 @@ struct PostView: View {
             Text(post.review_text)
                 .font(.body)
             
-            post.photosTabView
-                .frame(width: nil, height: 450)
+            if post.photos.count > 0 {
+                post.photosTabView
+                    .frame(width: nil, height: 450)
+            }
 
             Divider()
             
@@ -76,12 +79,25 @@ struct PostView: View {
                 
                 Spacer()
                 
-                Button(action: {}, label: {
-                    Image(systemName: "xmark.bin.fill")
-                        .resizable()
-                        .frame(width: 25, height: 24)
-                        .foregroundColor(.red)
-                })
+                if user.username == "Destiny" {
+                    Button(action: {}, label: {
+                        Image(systemName: "xmark.bin.fill")
+                            .resizable()
+                            .frame(width: 25, height: 24)
+                            .foregroundColor(.red)
+                    })
+                    
+                    Button(action: {
+                        showNewPostForm.toggle()
+                    }, label: {
+                        Image(systemName: "pencil.circle")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(.gray)
+                    })
+                    .padding(.leading)
+                    .fullScreenCover(isPresented: $showNewPostForm, content: CreatePostForm.init)
+                }
             }
         }
         .padding()

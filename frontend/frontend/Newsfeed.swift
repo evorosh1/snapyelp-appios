@@ -50,7 +50,9 @@ struct Newsfeed: View {
                 VStack(spacing: 10) {
                     ForEach(users, id: \.self) { user in
                         ForEach(user.posts, id: \.self) { post in
-                            PostView(user: user, post: post)
+                            if post.post_type == "public" {
+                                PostView(user: user, post: post)
+                            }
                         }
                     }
                 }
