@@ -5,6 +5,8 @@
 //  Created by Destiny Walcott on 3/21/22.
 //
 
+/// This file contains all the models for our data and our views
+
 import Foundation
 import SwiftUI
 
@@ -86,6 +88,9 @@ struct Friends: Codable, Hashable {
 
 var users: [User] = load("data.json")
 
+/// This loads data from a file
+/// - Parameter filename: name of the file 
+/// - Returns: decoded json data
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 
@@ -102,8 +107,6 @@ func load<T: Decodable>(_ filename: String) -> T {
 
     do {
         let decoder = JSONDecoder()
-//        let result = try decoder.decode(T.self, from: data)
-//        print(result)
         return try decoder.decode(T.self, from: data)
     } catch {
         fatalError("failed to parse data")

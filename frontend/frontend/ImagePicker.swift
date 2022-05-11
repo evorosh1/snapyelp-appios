@@ -10,6 +10,7 @@
 
 import SwiftUI
 
+/// This creates the view for opening and selecting photos from the device's photos library
 struct ImagePicker: UIViewControllerRepresentable {
 
     @Environment(\.presentationMode)

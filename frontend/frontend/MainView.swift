@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// This controls the layout of the app after the login page
 struct MainView: View {
     var body: some View {
         TabView {

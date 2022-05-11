@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+/// This is the entry point of the app
 struct frontendApp: App {
     var body: some Scene {
         WindowGroup {

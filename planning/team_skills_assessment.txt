@@ -1,54 +1,66 @@
-python
-C: Competent
-D: Competent
-L: Competent
-c++
-C: proficient
-D: proficient
-L: proficient
-java
-C: Novice
-D: Novice
-L: Competent
+Python
+Cole: Competent
+Destiny: Competent
+Liz: Competent
+
+C++
+Cole: proficient
+Destiny: proficient
+Liz: proficient
+
+Java
+Cole: Novice
+Destiny: Novice
+Liz: Competent
+
 C
-C: Competent
-D: Novice
-L: Competent
+Cole: Competent
+Destiny: Novice
+Liz: Competent
+
 R
-C: Novice
-D: None
-L: Novice
+Cole: Novice
+Destiny: None
+Liz: Novice
+
 React
-C: Novice
-D: Novice
-L: None
+Cole: Novice
+Destiny: Novice
+Liz: None
+
 Xcode
-C: None
-D: Novice
-L: Competent
+Cole: None
+Destiny: Novice
+Liz: Competent
+
 Visual Studio
-C: Novice
-D: Competent
-L: Novice
+Cole: Novice
+Destiny: Competent
+Liz: Novice
+
 Docker
-C: Novice
-D: Novice
-L: Novice
+Cole: Novice
+Destiny: Novice
+Liz: Novice
+
 Atom
-C: proficient
-D: Novice
-L: Novice
+Cole: proficient
+Destiny: Novice
+Liz: Novice
+
 BeautifulSoup
-C: Competent
-D: None
-L: None
+Cole: Competent
+Destiny: None
+Liz: None
+
 Flask
-C: None
-D: Novice
-L: None
+Cole: None
+Destiny: Novice
+Liz: None
+
 Django
-C: None
-D: Novice
-L: None
+Cole: None
+Destiny: Novice
+Liz: None
 
 

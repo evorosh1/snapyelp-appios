@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// This creates the view for the newsfeed page
 struct Newsfeed: View {
     @State var showNewPostForm = false
     @State var showSearchField = false

@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// This creates the view of the post items for the map
+/// - Parameters:
+///     - user: a collection of profile data for a  user
+///     - post: a collection of data for a single post belonging to the user
 struct MapItemView: View {
     @Environment(\.presentationMode) var presentationMode
     var user: User

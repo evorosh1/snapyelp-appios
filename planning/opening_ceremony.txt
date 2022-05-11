@@ -3,7 +3,7 @@ Cross-platform
 Social Media
 
 How will you use this application? 
-Mobile
+Mobile Social Media App
 
 Where would the user be located physically when using this application?
 Anywhere
@@ -15,7 +15,7 @@ When will this application be used?
 Whenever the user wants
 
 When can the application fail?
-Bugs in code, small servers, bad UI, bad structure
+Bugs in code, small server space, bad UI design, bad architecture
 
 Who is my user?
 Everyone
@@ -33,14 +33,14 @@ What does this application need to do?
 Entertain
 
 What are the components of this application?
-Server, System, User, Interface
+Database, API, User Interface
 
 What needs to happen next?
-Implement the code
+Design the UI and implement the code
 
 What must happen before the next step?
-Proper planning and structure
+Proper planning, structure, and organization
 
 What needs to be tracked?
-Users
+The user's data
 

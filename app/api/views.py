@@ -71,18 +71,3 @@ class Logout(APIView):
         response.delete_cookie('token')
         response.data = {'msg':'logout successful'}
         return response
-
-# { 
-# {
-# "first_name": "sam",
-# "last_name": "smith",
-# "username": "test",
-# "password": "test123!",
-# "confirm_password": "test123!",
-# "email": "test@test.com",
-# "profile": {}
-# }
-# }
-
-# {"username":"test", "password":"test123!"}
-# {"bio":"I love to code!", "profile_photo":"test"}

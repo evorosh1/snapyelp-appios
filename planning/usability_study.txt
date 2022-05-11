@@ -1,0 +1,17 @@
+Learnability
+    - Login and signup GUIs
+    - Form for creating cew posts GUI
+    - GUI for the posts and its interactions
+Efficiency
+    - Newsfeed GUI
+    - Profile page GUI
+    - Search bar GUI
+Memorability
+    - Map GUI
+
+Are there changes can you make to your UI to improve its usability? 
+    - To ensure that all UI components are easy to use, functional, and can be simple for any user to learn how to use our application without knowing any details about the app 
+
+
+
+

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// This creates the first view of the sign up page, which is the view for registering a new account
 struct SignupView: View {
     @State var first_name: String = ""
     @State var last_name: String = ""
@@ -100,7 +101,6 @@ struct SignupView: View {
                         .clipShape(Capsule())
                 })
                 .padding(.top, 20)
-//                .disabled(self.first_name.isEmpty || self.last_name.isEmpty || self.username.isEmpty || self.email.isEmpty || self.password.isEmpty || self.confirm_password.isEmpty)
                 .fullScreenCover(isPresented: $showCreateProfileView, content: CreateProfileForm.init)
             }
             .padding(.bottom, 50)

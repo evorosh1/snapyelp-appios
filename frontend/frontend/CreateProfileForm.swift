@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// This creates the second view of the sign up page, which is the view for finishing the setup process of the profile
 struct CreateProfileForm: View {
     @State var showImagePicker = false
     @State var image: UIImage? = nil
@@ -81,7 +82,6 @@ struct CreateProfileForm: View {
                     .clipShape(Capsule())
             })
             .padding(.top, 40)
-//            .disabled(self.bio.isEmpty || self.image == nil)
             .fullScreenCover(isPresented: $showMainView, content: MainView.init)
 
         }

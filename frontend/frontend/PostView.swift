@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// This creates the view of the posts for the newsfeed and profile pages
+/// - Parameters:
+///     - user: a collection of profile data for a  user
+///     - post: a collection of data for a single post belonging to the user
 struct PostView: View {
     @State var likeButtonBool: Bool = false
     @State var showComments: Bool = false

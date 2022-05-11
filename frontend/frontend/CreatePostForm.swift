@@ -12,11 +12,11 @@ enum PostType: String, Codable {
     case _private = "Private"
 }
 
+/// This creates view for creating/drafting a new post
 struct CreatePostForm: View {
     @Environment(\.presentationMode) var presentationMode
     @State var postType: PostType = ._public
     @State var review_text = ""
-//    @State var locationOn = false
     @State var location = ""
     @State var imageData = ""
     @State var showImagePicker = false
@@ -33,15 +33,6 @@ struct CreatePostForm: View {
                     })
                     
                     Spacer()
-                    
-//                    Button(action: {
-//                        locationOn.toggle()
-//                    }, label: {
-//                        Image(systemName: locationOn ? "location.fill" : "location")
-//                            .resizable()
-//                            .frame(width: 25, height: 25)
-//                    })
-//                    .padding(.trailing)
                     
                     Button(action: {
                         showImagePicker.toggle()

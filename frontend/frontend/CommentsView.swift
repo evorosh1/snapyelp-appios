@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// This creates the view for the comments section for each post
+/// - Parameters:
+///     - total_comments: number of comments for the post
 struct CommentsView: View {
     var total_comments: Int = 0
     var profilePicsArray: [String] = ["destiny-profile-pic", "liz-profile-pic", "profile-pic-1", "profile-pic-2", "profile-pic-3", "profile-pic-4", "profile-pic-5", "profile-pic-6", "profile-pic-7"]
@@ -63,9 +66,10 @@ struct CommentsView: View {
             
             HStack {
                 TextField("Write a comment...", text: $comment)
-                    .padding(10)
+                    .padding(15)
                     .background(lightGrayColor)
                     .border(.gray, width: 1.0)
+                    .font(.body)
                 
                 Button(action: {
                     if comment != "" {

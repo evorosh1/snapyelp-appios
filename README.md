@@ -1,126 +1,68 @@
-:warning: Everything between << >> needs to be replaced (remove << >> after replacing)
-# Project Proposal
-# << Project Title >>
-
+# Team 18's Social Media App
 ## CS 445 Final Project
-
 ### Spring, 2022
 
-https://github.com/bucs445spring22/final-project-team18
-
-[Link to SRS](https://docs.google.com/document/d/1XIzcDxvqk0s2EKfq9kwLHxLzjQK8xb5tjyCpdFfjh94/edit?usp=sharing)
-
-<< [link to demo presentation slides](#) >>
-
-### Team: << team name >>
-  
-#### << Team Members >>
+### Team: Team 18
+- Destiny Walcott
+- Elizabeth Voroshylo
+- Cole Cipp
 
 ## Getting Started
-
-<<One paragraph of project description goes here>>
+<< One paragraph of project description goes here >>
 
 ### Roadmap
-
-  <<
-- [x] Add Changelog
-- [x] Add back to top links
+<<
+  
+A list of features, function or non-functional, you would like to add in the future if you had time, i.e. Phase 2 stuff
+- [ ] Add Changelog
+- [ ] Add back to top links
 - [ ] Add Additional Templates w/ Examples
 - [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-  >>
   
-## Design
+>>
 
-### User Interface Design
-  
-* << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in your program. >>
-    * For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components
-* << You should also have a screenshot of each screen for your final GUI >>
+## SRS
+[document](https://docs.google.com/document/d/1XIzcDxvqk0s2EKfq9kwLHxLzjQK8xb5tjyCpdFfjh94/edit?usp=sharing)
 
-### Program Design
-  
-* Non-Standard libraries
-    * << You should have a list of any additional libraries or modules used (pygame, request) beyond non-standard python. >>
-    * For each additional module you should include
-        * url for the module documentation
-        * a short description of the module
-* Class Interface Design
-    * << A simple drawing that shows the class relationships in your code (see below for an example). >>
-        * ![class diagram](assets/class_diagram.jpg)
-    * This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm.
-* Classes
-    * << You should have a list of each of your classes with a description. >>
-
-### File Structure
-  
-* <<List your project file tree structure>>
-
-## Deployment
+## Presentation Slides
+[slides](https://docs.google.com/presentation/d/1Hx_I1Uzlz2lDZIgktH1zDceNs6DZKBmp3GLnCeSqGqI/edit?usp=sharing)
   
 ### Prerequisites
 
-What things you need to install the software and how to install it
-
-```
-Give examples
-```
+* [Docker](https://www.docker.com/)
+* [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 
 ### Installing
-
-<<
- A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
->>
-
-## Running the tests
-  
-### Testing Frameworks
-
-<<
-* Detailed explanation of each testing framework you used:
-    * Why you chose it
-    * How you used it
-    * How effective it was
-  
-Explain how to run the automated tests for this system
-
->>
-  
-### Break down into unit tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+- Our frontend is an iOS app built with SwiftUI. Hence you need a Mac machine to demo our application via the app simulator
+- Install Xcode from the App Store and once installed open up the root frontend directory which contains all files for our project
+- To boot up the app simulator, you can either press the play button in the top left corner or press `command r` on the keyboard
 
 ## Built With
- << list all fraemworks used here >>
-* [requests](https://docs.python-requests.org/en/latest/user/quickstart/#make-a-request) - request for humans
+ * [SwiftUI](https://developer.apple.com/xcode/swiftui/) 
 
 ## License
+MIT License
 
-None
+Copyright (c) [2022] [Destiny Walcott, Elizabeth Voroshylo, Cole Cipp]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Matteo Pacini's image picker code - [stack overflow link](https://stackoverflow.com/questions/56515871/how-to-open-the-imagepicker-in-swiftui)
 

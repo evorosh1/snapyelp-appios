@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// This creates the view for the search bar functionaility
 struct SearchBarView: View {
     @State var search_text = ""
     
@@ -35,6 +36,7 @@ struct SearchBarView: View {
         }
     }
     
+    /// This helper method filters the data for a user or all users that match the search query
     var searchResults: [User] {
         if search_text.isEmpty {
             return []

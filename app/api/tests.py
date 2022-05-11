@@ -11,32 +11,6 @@ from .views import Register
 
 # Create your tests here.
 
-"""
-register_data = []
-login_data = []
-
-for _ in range(10):
-    first_name = fake.first_name()
-    last_name = fake.last_name()
-    username = first_name + str(random.randint(1, 100))
-    pw = fake.password(length=10, special_chars=False)
-    email = first_name[0] + last_name + "@" + str(random.randint(10, 99)) + fake.safe_domain_name()
-
-    register_data.append({
-        'username': username, 
-        'first_name': first_name, 
-        'last_name': last_name, 
-        'email': email, 
-        'password': pw, 
-        'confirm_password': pw,
-    })
-
-    login_data.append({
-        'username': username,
-        'password': pw,
-    })
-"""
-
 class UserSignTestCase(APITestCase):
     def setUp(self):
         self.fake = Faker()
@@ -94,9 +68,6 @@ class UserLoginAndLogoutTestCase(APITestCase):
         """
         Ensure logout works.
         """
-        
-        # response = self.client.logout()
-        # self.assertEqual(response, None)
 
         url = reverse('logout')
         response = self.client.post(url)

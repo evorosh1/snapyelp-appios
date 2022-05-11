@@ -9,6 +9,7 @@ import SwiftUI
 
 let lightGrayColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0)
 
+/// This creates the view for the login page
 struct LoginView: View {
     
     @State var showImagePicker = false
@@ -57,7 +58,6 @@ struct LoginView: View {
                 })
                 .padding(.top, 20)
                 .padding(.bottom, 10)
-//                .disabled(self.username.isEmpty || self.password.isEmpty)
                 .fullScreenCover(isPresented: $showMainView, content: MainView.init)
 
                 Button(action: {
