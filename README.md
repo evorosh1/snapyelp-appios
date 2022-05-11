@@ -8,7 +8,8 @@
 - Cole Cipp
 
 ## Getting Started
-<< One paragraph of project description goes here >>
+
+Snapyelp is a social media application that allows users to view friends activities for inspiration on things to do. Users and friends can post pictures and leave reviews about their experiences, which users can scroll through and view on a newsfeed. When a user is bored or looking for ideas on how to spend their time, they can browse through the interactive map and click on pins near them to see what is happening there.   
 
 ### Roadmap
 <<
