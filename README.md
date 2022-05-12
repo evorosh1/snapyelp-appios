@@ -1,4 +1,4 @@
-# Team 18's Social Media App
+# SnapYelp
 ## CS 445 Final Project
 ### Spring, 2022
 
@@ -12,15 +12,10 @@
 Snapyelp is a social media application that allows users to view friends activities for inspiration on things to do. Users and friends can post pictures and leave reviews about their experiences, which users can scroll through and view on a newsfeed. When a user is bored or looking for ideas on how to spend their time, they can browse through the interactive map and click on pins near them to see what is happening there.   
 
 ### Roadmap
-<<
-  
 A list of features, function or non-functional, you would like to add in the future if you had time, i.e. Phase 2 stuff
-- [ ] Add Changelog
-- [ ] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-  
->>
+- [ ] Add a component for a "Friends List"
+- [ ] Add a option for the user tp delete their account
+- [ ] Add a option for the user to private their posts
 
 ## SRS
 [document](https://docs.google.com/document/d/1XIzcDxvqk0s2EKfq9kwLHxLzjQK8xb5tjyCpdFfjh94/edit?usp=sharing)
