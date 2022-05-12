@@ -9,6 +9,7 @@
 
 import Foundation
 import SwiftUI
+import MapKit
 
 var token = ""
 
@@ -31,7 +32,6 @@ struct User: Codable, Hashable {
     var bio: String = ""
     var posts: [Post] = []
     var friends: [Friends] = []
-    
     var profile_pic: String = ""
     var image: some View {
         Image(profile_pic)
@@ -49,6 +49,8 @@ struct User: Codable, Hashable {
 struct Post: Codable, Hashable {
     var review_text: String = ""
     var location: String = ""
+    var latitude: Double = 0
+    var longitude: Double = 0
     var liked: Bool = false
     var total_likes: Int = 0
     var total_comments: Int = 0
@@ -68,6 +70,15 @@ struct Post: Codable, Hashable {
         .tabViewStyle(PageTabViewStyle())
     }
 }
+
+struct Place: Identifiable {
+  let id = UUID()
+  var location: String
+  var coordinate: CLLocationCoordinate2D
+  var review_text: String
+}
+
+var places = [Place(location: "Binghamton, NY", coordinate: CLLocationCoordinate2D(latitude: 42.0987, longitude: 75.9180), review_text: "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️"), Place(location: "Boston, Massachusetts", coordinate: CLLocationCoordinate2D(latitude: 42.0987, longitude: 75.8180), review_text: "Let's go Red Sox‼️")]
 
 struct Friends: Codable, Hashable {
     var username: String = ""
@@ -89,7 +100,7 @@ struct Friends: Codable, Hashable {
 var users: [User] = load("data.json")
 
 /// This loads data from a file
-/// - Parameter filename: name of the file 
+/// - Parameter filename: name of the file
 /// - Returns: decoded json data
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
@@ -110,6 +121,7 @@ func load<T: Decodable>(_ filename: String) -> T {
         return try decoder.decode(T.self, from: data)
     } catch {
         fatalError("failed to parse data")
+    
     }
 }
 
