@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4854FDFA282DD2A600EAA1B6 /* MapTry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FDF9282DD2A600EAA1B6 /* MapTry.swift */; };
+		4854FDFC282DD2D700EAA1B6 /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FDFB282DD2D700EAA1B6 /* LocationDetailsView.swift */; };
+		4854FDFE282DD31600EAA1B6 /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FDFD282DD31600EAA1B6 /* PlaceAnnotationView.swift */; };
+		4854FE00282DD35600EAA1B6 /* PlaceAnnotationShowHideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FDFF282DD35600EAA1B6 /* PlaceAnnotationShowHideView.swift */; };
 		48901C3A2820242700631D3A /* pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48901C392820242700631D3A /* pin.swift */; };
 		48940F3327F36C1E00A31C6E /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48940F3227F36C1E00A31C6E /* Friend.swift */; };
 		48940F3527F36CE200A31C6E /* FrienddisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48940F3427F36CE200A31C6E /* FrienddisplayView.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4854FDF9282DD2A600EAA1B6 /* MapTry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTry.swift; sourceTree = "<group>"; };
+		4854FDFB282DD2D700EAA1B6 /* LocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
+		4854FDFD282DD31600EAA1B6 /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationView.swift; sourceTree = "<group>"; };
+		4854FDFF282DD35600EAA1B6 /* PlaceAnnotationShowHideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationShowHideView.swift; sourceTree = "<group>"; };
 		48901C392820242700631D3A /* pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pin.swift; sourceTree = "<group>"; };
 		48940F3227F36C1E00A31C6E /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		48940F3427F36CE200A31C6E /* FrienddisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienddisplayView.swift; sourceTree = "<group>"; };
@@ -99,7 +107,11 @@
 				D4E6B99927E8D9CA002E7530 /* MainView.swift */,
 				D4E3DA56281F3ED000C400D5 /* MapItemView.swift */,
 				48ED2AAF281FFE070099EC1D /* MapView.swift */,
+				4854FDF9282DD2A600EAA1B6 /* MapTry.swift */,
+				4854FDFB282DD2D700EAA1B6 /* LocationDetailsView.swift */,
 				48901C392820242700631D3A /* pin.swift */,
+				4854FDFD282DD31600EAA1B6 /* PlaceAnnotationView.swift */,
+				4854FDFF282DD35600EAA1B6 /* PlaceAnnotationShowHideView.swift */,
 				D44704AC27F39D6E007A54ED /* LoginView.swift */,
 				D4B3640A2822CBC500AA59DC /* data.json */,
 				D44704AE27F39D8B007A54ED /* SignupView.swift */,
@@ -204,13 +216,16 @@
 				D4E6B99C27E8DB00002E7530 /* CreatePostForm.swift in Sources */,
 				48B90CEA27E8B057001D9B1D /* ProfileView.swift in Sources */,
 				48940F3927F37B2500A31C6E /* FriendProfileView.swift in Sources */,
+				4854FDFE282DD31600EAA1B6 /* PlaceAnnotationView.swift in Sources */,
 				D4E6B99A27E8D9CB002E7530 /* MainView.swift in Sources */,
 				D4E6B99E27E8DB21002E7530 /* ImagePicker.swift in Sources */,
 				D4E3DA57281F3ED000C400D5 /* MapItemView.swift in Sources */,
+				4854FDFA282DD2A600EAA1B6 /* MapTry.swift in Sources */,
 				48B90CEE27E8B554001D9B1D /* ProfiledisplayView.swift in Sources */,
 				D44704AD27F39D6E007A54ED /* LoginView.swift in Sources */,
 				48B90CEC27E8B4BD001D9B1D /* Profile.swift in Sources */,
 				48940F3727F36FDD00A31C6E /* FriendView.swift in Sources */,
+				4854FE00282DD35600EAA1B6 /* PlaceAnnotationShowHideView.swift in Sources */,
 				D4C0154627D3D5AE005654AB /* Newsfeed.swift in Sources */,
 				48901C3A2820242700631D3A /* pin.swift in Sources */,
 				D454DA1527D5AA2000DAB28E /* PostView.swift in Sources */,
@@ -222,6 +237,7 @@
 				D4EA39112823290200D1C790 /* SearchBarView.swift in Sources */,
 				48940F3527F36CE200A31C6E /* FrienddisplayView.swift in Sources */,
 				48ED2AB0281FFE070099EC1D /* MapView.swift in Sources */,
+				4854FDFC282DD2D700EAA1B6 /* LocationDetailsView.swift in Sources */,
 				48940F3327F36C1E00A31C6E /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
