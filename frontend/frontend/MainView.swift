@@ -16,7 +16,7 @@ struct MainView: View {
                     Image(systemName: "house.fill")
                 }
 //            MapTry()
-            MapView()
+            MapTry2()
                 .tabItem {
                     Image(systemName: "mappin.and.ellipse")
                 }

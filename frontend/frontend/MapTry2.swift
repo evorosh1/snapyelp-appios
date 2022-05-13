@@ -11,8 +11,6 @@ import MapKit
 struct MapTry2: View {
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.098, longitude: -75.9180), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
-    var user: User
-    var post: Post
     @State var displayPost = false
     
     var body: some View {
@@ -48,6 +46,6 @@ struct MapTry2: View {
 
 struct MapTry2_Previews: PreviewProvider {
     static var previews: some View {
-        MapTry2(user: users[0], post: users[0].posts[0])
+        MapTry2()
     }
 }
