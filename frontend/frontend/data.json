@@ -163,8 +163,8 @@
                 "profile_pic": "profile-pic-6"
             },
             {
-                "username": "Derek",
-                "profile_pic": "profile-pic-5"
+                "username": "Cole",
+                "profile_pic": "cole-profile-pic"
             }
         ]
     },
@@ -202,8 +202,8 @@
         }]
     },
     {
-        "username": "Derek",
-        "profile_pic": "profile-pic-5",
+        "username": "Cole",
+        "profile_pic": "cole-profile-pic",
         "bio": "",
         "posts": [{
                 "review_text": "The atmosphere was nice and the food is delicious. Highly recommend.",
