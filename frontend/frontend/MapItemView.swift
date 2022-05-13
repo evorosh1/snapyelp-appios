@@ -13,7 +13,7 @@ import SwiftUI
 ///     - post: a collection of data for a single post belonging to the user
 struct MapItemView: View {
     @Environment(\.presentationMode) var presentationMode
-    var user: User
+    var user: String
     var post: Post
     
     var body: some View {
@@ -22,7 +22,7 @@ struct MapItemView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("\(post.location)")
                         .font(.headline)
-                    Text("Posted by \(user.username)")
+                    Text("Posted by \(user)")
                         .font(.subheadline)
                 }
                 
@@ -45,6 +45,6 @@ struct MapItemView: View {
 
 struct MapItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MapItemView(user: users[0], post: users[0].posts[0])
+        MapItemView(user: users[0].username, post: users[0].posts[0])
     }
 }

@@ -74,13 +74,9 @@ struct Post: Codable, Hashable {
 struct Place: Identifiable {
     let id = UUID()
     var coordinate: CLLocationCoordinate2D
-    var user: User
+    var user: String
     var post: Post
 }
-
-//var places = [Place(location: "Binghamton, NY", coordinate: CLLocationCoordinate2D(latitude: 42.0987, longitude: 75.9180), review_text: "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️"), Place(location: "Boston, Massachusetts", coordinate: CLLocationCoordinate2D(latitude: 42.0987, longitude: 75.8180), review_text: "Let's go Red Sox‼️")]
-
-//var places = [Place(coordinate: CLLocationCoordinate2D(latitude: 42.098, longitude: -75.9180))]
 
 struct Friends: Codable, Hashable {
     var username: String = ""
@@ -127,15 +123,27 @@ func load<T: Decodable>(_ filename: String) -> T {
     }
 }
 
-var coordinates = [CLLocationCoordinate2D(latitude: 42.098, longitude: 75.9180), CLLocationCoordinate2D(latitude: 42.102, longitude: 75.5418),CLLocationCoordinate2D(latitude: 42.098, longitude: 75.180),CLLocationCoordinate2D(latitude: 39.3643, longitude: 74.4229),CLLocationCoordinate2D(latitude: 33.7490, longitude: 84.3880),CLLocationCoordinate2D(latitude: 30.2671, longitude: 97.7431),CLLocationCoordinate2D(latitude: 25.7617, longitude: 80.1918), CLLocationCoordinate2D(latitude: 40.7128, longitude: 74.0060)]
+var coordinates = [CLLocationCoordinate2D(latitude: 42.0987, longitude: -75.9180),
+                   CLLocationCoordinate2D(latitude: 42.0987, longitude: -75.9180),
+                   CLLocationCoordinate2D(latitude: 42.0987, longitude: -75.9180),
+                   CLLocationCoordinate2D(latitude: 42.3601, longitude: -71.0589),
+                   CLLocationCoordinate2D(latitude: 42.1156, longitude: -75.9588),
+                   CLLocationCoordinate2D(latitude: 39.3643, longitude: -74.4229),
+                   CLLocationCoordinate2D(latitude: 33.7490, longitude: -84.3880),
+                   CLLocationCoordinate2D(latitude: 30.2671, longitude: -97.7431),
+                   CLLocationCoordinate2D(latitude: 25.7617, longitude: -80.1918),
+                   CLLocationCoordinate2D(latitude: 28.5384, longitude: -81.3789),
+                   CLLocationCoordinate2D(latitude: 34.0522, longitude: -118.2437),
+                   CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.0060)]
+
 var places = setMapData()
 func setMapData() -> [Place] {
     var data: [Place] = []
     var i = 0
     for user in users {
         for post in user.posts {
-            data.append(Place(coordinate: coordinates[i], user: user, post: post))
-           i += 1 // once you add more coordinates uncomment this line to increment the index
+            data.append(Place(coordinate: coordinates[i], user: user.username, post: post))
+            i += 1
         }
     }
     return data

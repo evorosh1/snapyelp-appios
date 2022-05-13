@@ -3,32 +3,86 @@
         "username": "Destiny",
         "profile_pic": "destiny-profile-pic",
         "bio": "",
-        "posts": [{
-            "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
-            "photos": ["tacos-1", "nachos"],
-            "location": "Binghamton, NY",
-            "latitude": 42.0987,
-            "longitude": 75.9180,
-            "liked": false,
-            "total_likes": 10,
-            "total_comments": 5,
-            "post_type": "public"
-        }],
+        "posts": [
+            {
+                "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
+                "photos": ["tacos-1", "nachos"],
+                "location": "Binghamton, NY",
+                "latitude": 42.0987,
+                "longitude": -75.9180,
+                "liked": false,
+                "total_likes": 10,
+                "total_comments": 5,
+                "post_type": "public"
+            },
+            {
+                "review_text": "10 out of 10, highly recommend‼️",
+                "photos": ["italian-food-1"],
+                "location": "Binghamton, NY",
+                "latitude": 42.0987,
+                "longitude": -75.9180,
+                "liked": false,
+                "total_likes": 10,
+                "total_comments": 5,
+                "post_type": "private"
+            },
+            {
+                "review_text": "The atmosphere was nice.",
+                "photos": ["restaurant-atlantic-city-nj"],
+                "location": "Binghamton, NY",
+                "latitude": 42.0987,
+                "longitude": -75.9180,
+                "liked": false,
+                "total_likes": 10,
+                "total_comments": 5,
+                "post_type": "private"
+            }
+        ],
         "friends": [{
-            "username": "Liz",
-            "profile_pic": "liz-profile-pic"
-        }]
+                "username": "Liz",
+                "profile_pic": "liz-profile-pic"
+            },
+            {
+                "username": "Andrew",
+                "profile_pic": "profile-pic-1"
+            }
+        ]
     },
     {
         "username": "Andrew",
         "profile_pic": "profile-pic-1",
         "bio": "",
         "posts": [{
-            "review_text": "Let's go Rumble Ponies‼️",
+            "review_text": "Let's go Red Sox‼️",
             "photos": ["baseball-game-1", "baseball-game-2"],
-            "location": "Binghamton, New York",
-            "latitude": 41.0987,
-            "longitude": 75.9180,
+            "location": "Boston, MA",
+            "latitude": 42.3601,
+            "longitude": -71.0589,
+            "liked": false,
+            "total_likes": 12,
+            "total_comments": 5,
+            "post_type": "public"
+        }],
+        "friends": [{
+                "username": "Destiny",
+                "profile_pic": "destiny-profile-pic"
+            },
+            {
+                "username": "Brien",
+                "profile_pic": "profile-pic-4"
+            }
+        ]
+    },
+    {
+        "username": "Liz",
+        "profile_pic": "liz-profile-pic",
+        "bio": "",
+        "posts": [{
+            "review_text": "Great Cats, Lots of options",
+            "photos": ["humane"],
+            "location": "Binghamton, NY",
+            "latitude": 42.1156,
+            "longitude": -75.9588,
             "liked": false,
             "total_likes": 12,
             "total_comments": 5,
@@ -40,26 +94,6 @@
         }]
     },
     {
-        "username": "Liz",
-        "profile_pic": "liz-profile-pic",
-        "bio": "",
-        "posts": [{
-            "review_text": "Great Cats, Lots of options",
-            "photos": ["humane"],
-            "location": "Binghamton, NY",
-            "latitude": 42.987,
-            "longitude": 75.180,
-            "liked": false,
-            "total_likes": 12,
-            "total_comments": 5,
-            "post_type": "public"
-        }],
-        "friends": [{
-            "username": "Liz",
-            "profile_pic": "liz-profile-pic"
-        }]
-    },
-    {
         "username": "Brien",
         "profile_pic": "profile-pic-4",
         "bio": "",
@@ -67,17 +101,22 @@
             "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
             "photos": ["restaurant-atlantic-city-nj", "chicken-platter"],
             "location": "Atlantic City, NJ",
-            "latitude": 42.1987,
-            "longitude": 75.6180,
+            "latitude": 39.3643,
+            "longitude": -74.4229,
             "liked": false,
             "total_likes": 50,
             "total_comments": 20,
             "post_type": "public"
         }],
         "friends": [{
-            "username": "Liz",
-            "profile_pic": "liz-profile-pic"
-        }]
+                "username": "Liz",
+                "profile_pic": "liz-profile-pic"
+            },
+            {
+                "username": "Andrew",
+                "profile_pic": "profile-pic-1"
+            }
+        ]
     },
     {
         "username": "Jenifer",
@@ -86,18 +125,23 @@
         "posts": [{
             "review_text": "This is the best bowling alley in Atlanta",
             "photos": ["bowling-alley-1", "bowling-alley-2"],
-            "location": "Atlanta, Georgia",
-            "latitude": 42.1787,
-            "longitude": 75.8980,
+            "location": "Atlanta, GA",
+            "latitude": 33.7490,
+            "longitude": -84.3880,
             "liked": false,
             "total_likes": 12,
             "total_comments": 5,
             "post_type": "public"
         }],
         "friends": [{
-            "username": "Liz",
-            "profile_pic": "liz-profile-pic"
-        }]
+                "username": "Liz",
+                "profile_pic": "liz-profile-pic"
+            },
+            {
+                "username": "Giles",
+                "profile_pic": "profile-pic-3"
+            }
+        ]
     },
     {
         "username": "Giles",
@@ -106,18 +150,23 @@
         "posts": [{
             "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
             "photos": ["italian-food-3"],
-            "location": "Austin, Texas",
-            "latitude": 42.0687,
-            "longitude": 75.9180,
+            "location": "Austin, TX",
+            "latitude": 30.2671,
+            "longitude": -97.7431,
             "liked": false,
             "total_likes": 10,
             "total_comments": 5,
             "post_type": "public"
         }],
         "friends": [{
-            "username": "Liz",
-            "profile_pic": "liz-profile-pic"
-        }]
+                "username": "Tamarra",
+                "profile_pic": "profile-pic-6"
+            },
+            {
+                "username": "Derek",
+                "profile_pic": "profile-pic-5"
+            }
+        ]
     },
     {
         "username": "Tamarra",
@@ -126,9 +175,9 @@
         "posts": [{
                 "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
                 "photos": ["italian-food-2"],
-                "location": "Miami, Florida",
-                "latitude": 42.0587,
-                "longitude": 75.9380,
+                "location": "Miami, FL",
+                "latitude": 25.7617,
+                "longitude": -80.1918,
                 "liked": false,
                 "total_likes": 11,
                 "total_comments": 6,
@@ -137,9 +186,9 @@
             {
                 "review_text": "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️",
                 "photos": ["tacos-2", "drinks-1"],
-                "location": "Miami, Florida",
-                "latitude": 42.0187,
-                "longitude": 75.9580,
+                "location": "Tampa, FL",
+                "latitude": 28.5384,
+                "longitude": -81.3789,
                 "liked": false,
                 "total_likes": 18,
                 "total_comments": 7,
@@ -159,9 +208,9 @@
         "posts": [{
                 "review_text": "The atmosphere was nice and the food is delicious. Highly recommend.",
                 "photos": ["italian-food-1"],
-                "location": "Los Angeles, California",
-                "latitude": 42.0987,
-                "longitude": 75.9680,
+                "location": "Los Angeles, CA",
+                "latitude": 34.0522,
+                "longitude": -118.2437,
                 "liked": false,
                 "total_likes": 20,
                 "total_comments": 10,
@@ -171,18 +220,24 @@
                 "review_text": "Enjoyed the show",
                 "photos": ["broadway-show-1"],
                 "location": "New York, NY",
-                "latitude": 42.0387,
-                "longitude": 75.9880,
+                "latitude": 40.7128,
+                "longitude": -74.0060,
                 "liked": false,
                 "total_likes": 14,
                 "total_comments": 9,
                 "post_type": "public"
             }
         ],
-        "friends": [{
-            "username": "Liz",
-            "profile_pic": "liz-profile-pic"
-        }]
+        "friends": [
+            {
+                "username": "Liz",
+                "profile_pic": "liz-profile-pic"
+            },
+            {
+                "username": "Destiny",
+                "profile_pic": "destiny-profile-pic"
+            }
+        ]
     }
 ]
 
