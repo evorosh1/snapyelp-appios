@@ -29,8 +29,8 @@ struct MapTry2: View {
 //
 //            }
 //        }
-        Map(coordinateRegion: $region, annotationItems: places) {place in
-            MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)) {
+        Map(coordinateRegion: $region, interactionModes: .all, annotationItems: places) {place in
+            MapAnnotation(coordinate: place.coordinate) {
                 Button(action: {
                     displayPost.toggle()
                 }, label: {
