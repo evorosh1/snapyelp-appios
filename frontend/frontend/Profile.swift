@@ -5,22 +5,14 @@
 //  Created by Elizabeth Voroshylo on 3/21/22.
 //
 
+
 import Foundation
 
 struct Profile {
-    var username: String
-    var publicprofile = false
-    var seasonalPhoto = Season.winter
-    var goalDate = Date()
-
-    static let `default` = Profile(username: "Destiny Walcott")
-
-    enum Season: String, CaseIterable, Identifiable {
-        case spring = "🌷"
-        case summer = "🌞"
-        case autumn = "🍂"
-        case winter = "☃️"
-
-        var id: String { rawValue }
-    }
+    var user: User
+    var post: Post
+    
+    static let `default` = Profile(user: users[0], post: users[0].posts[0])
+    
+    
 }

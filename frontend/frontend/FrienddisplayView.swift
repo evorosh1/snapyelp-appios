@@ -15,6 +15,7 @@ struct FrienddisplayView: View {
     
     var body: some View {
         VStack {
+            
             /*HStack(alignment: .center) {
                 Button(action: {
                     showFriend.toggle()

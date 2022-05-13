@@ -15,7 +15,7 @@ struct SearchBarView: View {
         NavigationView {
             List {
                 ForEach(searchResults, id: \.self) { user in
-                    NavigationLink(destination: ProfileView()) {
+                    NavigationLink(destination: FriendProfileView(user: user)) {
                         HStack(alignment: .center, spacing: 10) {
                             Image(user.profile_pic)
                                 .resizable()

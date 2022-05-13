@@ -24,9 +24,9 @@
         "profile_pic": "profile-pic-1",
         "bio": "",
         "posts": [{
-            "review_text": "Let's go Red Sox‼️",
+            "review_text": "Let's go Rumble Ponies‼️",
             "photos": ["baseball-game-1", "baseball-game-2"],
-            "location": "Boston, Massachusetts",
+            "location": "Binghamton, New York",
             "latitude": 41.0987,
             "longitude": 75.9180,
             "liked": false,

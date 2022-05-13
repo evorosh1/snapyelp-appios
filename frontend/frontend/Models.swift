@@ -127,7 +127,7 @@ func load<T: Decodable>(_ filename: String) -> T {
     }
 }
 
-var coordinates = [CLLocationCoordinate2D(latitude: 42.098, longitude: -75.9180)]
+var coordinates = [CLLocationCoordinate2D(latitude: 42.098, longitude: 75.9180), CLLocationCoordinate2D(latitude: 42.102, longitude: 75.5418),CLLocationCoordinate2D(latitude: 42.098, longitude: 75.180),CLLocationCoordinate2D(latitude: 39.3643, longitude: 74.4229),CLLocationCoordinate2D(latitude: 33.7490, longitude: 84.3880),CLLocationCoordinate2D(latitude: 30.2671, longitude: 97.7431),CLLocationCoordinate2D(latitude: 25.7617, longitude: 80.1918), CLLocationCoordinate2D(latitude: 40.7128, longitude: 74.0060)]
 var places = setMapData()
 func setMapData() -> [Place] {
     var data: [Place] = []
@@ -135,7 +135,7 @@ func setMapData() -> [Place] {
     for user in users {
         for post in user.posts {
             data.append(Place(coordinate: coordinates[i], user: user, post: post))
-//            i += 1 // once you add more coordinates uncomment this line to increment the index
+           i += 1 // once you add more coordinates uncomment this line to increment the index
         }
     }
     return data
