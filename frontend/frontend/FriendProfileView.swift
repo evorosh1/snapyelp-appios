@@ -96,57 +96,8 @@ struct FriendProfileView: View {
             
             
         }
-        
-        
     }
-    
 }
-            
-            
-//        }
-//        .padding(.horizontal)
-        
-//            Divider()
-                
-//            ScrollView {
-//                HStack(alignment: .center) {
-//                    user.image
-//
-//                    VStack(alignment: .leading, spacing: 2) {
-//                        HStack {
-//                            Text(user.username)
-//                                .font(.headline)
-//                            Spacer()
-//                            Image(systemName: user.posts[0].post_type == "public" ? "globe" : "lock.fill")
-//                                .foregroundColor(.gray)
-//                        }
-//
-//                        if user.posts[0].location != "" {
-//                            Text(user.posts[0].location)
-//                                .font(.subheadline)
-//                        }
-//                    }
-//                    .frame(width: nil)
-//                    .padding(.vertical)
-//
-//                    Spacer()
-//                }
-//
-//                Divider()
-//
-//                Text(user.posts[0].review_text)
-//                    .font(.body)
-//
-//                if user.posts[0].photos.count > 0 {
-//                    user.posts[0].photosTabView
-//                        .frame(width: nil, height: 450)
-//                }
-//
-//                Divider()
-//
-////                .padding(.vertical)
-//        }
-//        .padding(.vertical)
 
 
 struct FriendProfileView_Previews: PreviewProvider {
