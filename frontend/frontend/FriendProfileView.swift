@@ -64,6 +64,20 @@ struct FriendProfileView: View {
                         }
                     }
                 }
+                
+                if user.username != "Destiny" {
+                    Button(action: {
+                    }, label: {
+                        Text("Add Friend")
+                            .padding(.vertical)
+                            .padding(.horizontal)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .background(.blue)
+                            .clipShape(Capsule())
+                    })
+                }
+                
             }
             
             Divider()
