@@ -72,14 +72,15 @@ struct Post: Codable, Hashable {
 }
 
 struct Place: Identifiable {
-  let id = UUID()
-  var coordinate: CLLocationCoordinate2D
-
+    let id = UUID()
+    var coordinate: CLLocationCoordinate2D
+    var user: User
+    var post: Post
 }
 
 //var places = [Place(location: "Binghamton, NY", coordinate: CLLocationCoordinate2D(latitude: 42.0987, longitude: 75.9180), review_text: "The atmosphere was nice and the food is delicious. 10 out of 10, highly recommend‼️"), Place(location: "Boston, Massachusetts", coordinate: CLLocationCoordinate2D(latitude: 42.0987, longitude: 75.8180), review_text: "Let's go Red Sox‼️")]
 
-var places = [Place(coordinate: CLLocationCoordinate2D(latitude: 42.098, longitude: -75.9180))]
+//var places = [Place(coordinate: CLLocationCoordinate2D(latitude: 42.098, longitude: -75.9180))]
 
 struct Friends: Codable, Hashable {
     var username: String = ""
@@ -124,5 +125,19 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("failed to parse data")
     
     }
+}
+
+var coordinates = [CLLocationCoordinate2D(latitude: 42.098, longitude: -75.9180)]
+var places = setMapData()
+func setMapData() -> [Place] {
+    var data: [Place] = []
+    var i = 0
+    for user in users {
+        for post in user.posts {
+            data.append(Place(coordinate: coordinates[i], user: user, post: post))
+//            i += 1 // once you add more coordinates uncomment this line to increment the index
+        }
+    }
+    return data
 }
 
