@@ -27,15 +27,6 @@ struct MapItemView: View {
                 }
                 
                 Spacer()
-                
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Image(systemName: "xmark")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(.blue)
-                })
             }
             .padding(.horizontal)
             
@@ -43,6 +34,10 @@ struct MapItemView: View {
                 .padding()
             
             post.photosTabView
+        }
+        .padding(.vertical, 20)
+        .overlay {
+            Rectangle().stroke(.gray)
         }
     }
 }
