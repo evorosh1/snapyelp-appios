@@ -19,12 +19,6 @@ Here is a list of features, function or non-functional, the we would like to add
 
 ## SRS
 [document](https://docs.google.com/document/d/1XIzcDxvqk0s2EKfq9kwLHxLzjQK8xb5tjyCpdFfjh94/edit?usp=sharing)
-
-## Presentation Slides
-[slides](https://docs.google.com/presentation/d/1Hx_I1Uzlz2lDZIgktH1zDceNs6DZKBmp3GLnCeSqGqI/edit?usp=sharing)
-
-## Video Demo
-[demo](https://user-images.githubusercontent.com/33358373/168333726-ff141a30-fbc3-46e2-b915-e088eb35ed70.mp4)
   
 ### Prerequisites
 
