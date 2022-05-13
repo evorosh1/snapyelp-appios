@@ -12,7 +12,7 @@
 Snapyelp is a social media application that allows users to view friends activities for inspiration on things to do. Users and friends can post pictures and leave reviews about their experiences, which users can scroll through and view on a newsfeed. When a user is bored or looking for ideas on how to spend their time, they can browse through the interactive map and click on pins near them to see what is happening there.   
 
 ### Roadmap
-A list of features, function or non-functional, you would like to add in the future if you had time, i.e. Phase 2 stuff
+Here is a list of features, function or non-functional, the we would like to add in the future if you had time
 - [ ] Add a component for a "Friends List"
 - [ ] Add a option for the user tp delete their account
 - [ ] Add a option for the user to private their posts
@@ -22,6 +22,9 @@ A list of features, function or non-functional, you would like to add in the fut
 
 ## Presentation Slides
 [slides](https://docs.google.com/presentation/d/1Hx_I1Uzlz2lDZIgktH1zDceNs6DZKBmp3GLnCeSqGqI/edit?usp=sharing)
+
+## Video Demo
+[demo](https://github.com/bucs445spring22/final-project-team18/blob/main/video-demo.mp4)
   
 ### Prerequisites
 
