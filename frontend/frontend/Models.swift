@@ -136,8 +136,10 @@ var coordinates = [CLLocationCoordinate2D(latitude: 42.0987, longitude: -75.9180
                    CLLocationCoordinate2D(latitude: 34.0522, longitude: -118.2437),
                    CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.0060)]
 
-// var coordinates = [CLLocationCoordinate2D(latitude: 42.098, longitude: -75.9180), CLLocationCoordinate2D(latitude: 42.102, longitude: -75.8418),CLLocationCoordinate2D(latitude: 42.098, longitude: -75.8980),CLLocationCoordinate2D(latitude: 39.3643, longitude: -74.4229),CLLocationCoordinate2D(latitude: 33.7490, longitude: -84.3880),CLLocationCoordinate2D(latitude: 30.2671, longitude: -97.7431),CLLocationCoordinate2D(latitude: 25.7617, longitude: -80.1918), CLLocationCoordinate2D(latitude: 25.7617, longitude: -80.2918), CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.0060), CLLocationCoordinate2D(latitude: 41.7128, longitude: -74.0060)]
 var places = setMapData()
+
+/// This creates the data for the map view
+/// - Returns: a collection of coordinate data plus user and post data
 func setMapData() -> [Place] {
     var data: [Place] = []
     var i = 0

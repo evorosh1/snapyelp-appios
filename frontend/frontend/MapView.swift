@@ -1,58 +1,31 @@
 //
-//  MapView.swift
+//  MapTry2.swift
 //  frontend
 //
-//  Created by Elizabeth Voroshylo on 5/2/22.
+//  Created by Destiny Walcott on 5/12/22.
 //
 
-import MapKit
 import SwiftUI
-
-struct MyAnnotationItem: Identifiable {
-    var coordinate: CLLocationCoordinate2D
-    var color: Color?
-    var tint: Color { color ?? .red }
-    let id = UUID()
-}
+import MapKit
 
 struct MapView: View {
-   
-    @State private var region: MKCoordinateRegion = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: MapDefaults.latitude, longitude: MapDefaults.longitude),
-        span: MKCoordinateSpan(latitudeDelta: MapDefaults.zoom, longitudeDelta: MapDefaults.zoom))
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.098, longitude: -75.9180), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
-    let annotationItems = [MyAnnotationItem(
-                            coordinate: CLLocationCoordinate2D(
-                                latitude: MapDefaults.latitude,
-                                longitude: MapDefaults.longitude)),
-                           MyAnnotationItem(
-                            coordinate: CLLocationCoordinate2D(
-                                latitude: 42.1827419,
-                                longitude: -75.92),
-                            color: .yellow),
-                           MyAnnotationItem(
-                            coordinate: CLLocationCoordinate2D(
-                                latitude: 42.0543,
-                                longitude: -75.899),
-                            color: .blue)]
-    
-    private enum MapDefaults {
-        static let latitude = 42.098
-        static let longitude = -75.9180
-        static let zoom = 0.5
-    }
-    
+    @State var displayPost = false
     
     var body: some View {
-        VStack {
-//            Text("lat: \(region.center.latitude), long: \(region.center.longitude). Zoom: \(region.span.latitudeDelta)")
-//            .font(.caption)
-//            .padding()
-            Map(coordinateRegion: $region,
-                interactionModes: .all,
-                showsUserLocation: true,
-                annotationItems: annotationItems) { item in
-                MapMarker(coordinate: item.coordinate)
+        Map(coordinateRegion: $region, annotationItems: places) {place in
+            MapAnnotation(coordinate: place.coordinate) {
+                if place.post.post_type == "public" {
+                    Button(action: {
+                        displayPost.toggle()
+                    }, label: {
+                        PlaceAnnotationView(title: place.post.location)
+                    })
+                    .sheet(isPresented: $displayPost) {
+                        MapItemView(user: place.user, post: place.post)
+                    }
+                }
             }
         }
     }
@@ -63,8 +36,3 @@ struct MapView_Previews: PreviewProvider {
         MapView()
     }
 }
-
-//, showsUserLocation: true, userTrackingMode: .constant(.follow))
-   // .frame(width: 400, height: 300
-
-
