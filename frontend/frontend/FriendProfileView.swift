@@ -86,9 +86,14 @@ struct FriendProfileView: View {
             ScrollView {
                 VStack(spacing: 10) {
                     ForEach(posts, id: \.self) { post in
-                        if post.post_type == "public" {
+                        if user.username == "Destiny" {
                             PostView(user: user, post: post)
+                        } else {
+                            if post.post_type == "public" {
+                                PostView(user: user, post: post)
+                            }
                         }
+                        
                     }
                 }
                 .frame(width: nil)
