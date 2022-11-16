@@ -17,6 +17,7 @@ struct SignupView: View {
     @State var confirm_password: String = ""
     
     @State var showCreateProfileView = false
+    @State var token: String
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -89,8 +90,8 @@ struct SignupView: View {
                 .padding(.horizontal, 5)
                 
                 Button(action: {
-//                    postSignupData()
-                    showCreateProfileView.toggle()
+                    postSignupData()
+                    //showCreateProfileView.toggle()
                 }, label: {
                     Text("Sign Up")
                         .padding(.vertical, 20)
@@ -101,7 +102,9 @@ struct SignupView: View {
                         .clipShape(Capsule())
                 })
                 .padding(.top, 20)
-                .fullScreenCover(isPresented: $showCreateProfileView, content: CreateProfileForm.init)
+                .fullScreenCover(isPresented: $showCreateProfileView){
+                    CreateProfileForm(token: token)  
+                }
             }
             .padding(.bottom, 50)
             
@@ -110,7 +113,7 @@ struct SignupView: View {
     }
     
     func postSignupData() {
-        guard let url = URL(string: "http://0.0.0.0:8000/register/") else {
+        guard let url = URL(string: "http://localhost:8000/register/") else {
             print("api is down")
             return
         }
@@ -154,9 +157,9 @@ struct SignupView: View {
     
     
 }
-
+/*
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
         SignupView()
     }
-}
+}*/

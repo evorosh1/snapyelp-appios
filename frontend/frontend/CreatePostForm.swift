@@ -21,6 +21,10 @@ struct CreatePostForm: View {
     @State var imageData = ""
     @State var showImagePicker = false
     @State var image: UIImage? = nil
+    
+    @State var showMainView = false
+    
+    @State var token: String
 
     var body: some View {
         NavigationView {
@@ -50,6 +54,7 @@ struct CreatePostForm: View {
                     }
                     
                     Button(action: {
+                        postPostData()
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("Post")
@@ -111,10 +116,54 @@ struct CreatePostForm: View {
             .navigationBarHidden(true)
         }
     }
+    func postPostData() {
+        guard let url = URL(string: "http://localhost:8000/account/user/") else {
+            print("api is down")
+            return
+        }
+        
+        let parameters: [String: Any] = ["review_text": self.review_text, "location": self.location, "post_type" = self.post_type]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/x-www-form-urlendoded", forHTTPHeaderField: "Content-Type")
+        request.addValue("Token \(token)", forHTTPHeaderField: "Authorization")
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+              print("error with patch request: \(error.localizedDescription)")
+              return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                print("unexpected status code: \(String(describing: response))")
+              return
+            }
+            
+            if let data = data {
+                if let response = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    DispatchQueue.main.async {
+                        print(response)
+                        self.showMainView.toggle()
+                    }
+                    return
+                }
+            }
+        }.resume()
+    }
 }
-
+/*
 struct CreatePostForm_Previews: PreviewProvider {
     static var previews: some View {
         CreatePostForm()
     }
 }
+*/

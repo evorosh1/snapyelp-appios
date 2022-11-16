@@ -11,6 +11,7 @@ import SwiftUI
 struct Newsfeed: View {
     @State var showNewPostForm = false
     @State var showSearchField = false
+    @State var user : User
     
     var body: some View {
         VStack {
@@ -30,7 +31,7 @@ struct Newsfeed: View {
                     })
                     .padding(.trailing)
                     .sheet(isPresented: $showSearchField) {
-                        SearchBarView()
+                        SearchBarView(user : user)
                     }
                     
                     Button(action: {
@@ -47,7 +48,7 @@ struct Newsfeed: View {
             
             Divider()
             
-            ScrollView {
+            /*ScrollView {
                 VStack(spacing: 10) {
                     ForEach(users, id: \.self) { user in
                         ForEach(user.posts, id: \.self) { post in
@@ -59,13 +60,13 @@ struct Newsfeed: View {
                 }
                 .frame(width: nil)
             }
-            .padding(.vertical)
+            .padding(.vertical) */
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Newsfeed()
+        Newsfeed(user: User())
     }
 }

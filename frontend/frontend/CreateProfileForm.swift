@@ -15,6 +15,8 @@ struct CreateProfileForm: View {
     @State var bio = ""
     @State var showMainView = false
     
+    @State var token: String
+    
     var body: some View {
         VStack {
             Text("Yay, your account was successfully created! Let's setup your profile.")
@@ -70,8 +72,8 @@ struct CreateProfileForm: View {
             .padding(.horizontal, 3)
             
             Button(action: {
-//                postProfileData()
-                showMainView.toggle()
+                postProfileData()
+                //showMainView.toggle()
             }, label: {
                 Text("Done")
                     .padding(.vertical, 20)
@@ -82,19 +84,21 @@ struct CreateProfileForm: View {
                     .clipShape(Capsule())
             })
             .padding(.top, 40)
-            .fullScreenCover(isPresented: $showMainView, content: MainView.init)
+            .fullScreenCover(isPresented: $showMainView){
+                MainView()
+            }
 
         }
         .padding(.horizontal, 20)
     }
     
     func postProfileData() {
-        guard let url = URL(string: "http://0.0.0.0:8000/account/user/") else {
+        guard let url = URL(string: "http://localhost:8000/account/user/") else {
             print("api is down")
             return
         }
         
-        let parameters: [String: Any] = ["bio": self.bio, "profile_photo": self.imageData]
+        let parameters: [String: Any] = ["bio": self.bio, "profile_pic": self.imageData]
         print(self.bio, self.imageData)
         
         var request = URLRequest(url: url)
@@ -133,9 +137,10 @@ struct CreateProfileForm: View {
         }.resume()
     }
 }
-
+/*
 struct CreateProfileForm_Previews: PreviewProvider {
     static var previews: some View {
         CreateProfileForm()
     }
 }
+*/

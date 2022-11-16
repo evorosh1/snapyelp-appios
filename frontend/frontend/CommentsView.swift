@@ -89,9 +89,10 @@ struct CommentsView: View {
         .padding(.horizontal)
     }
 }
-
+/*
 struct CommentsView_Previews: PreviewProvider {
     static var previews: some View {
         CommentsView(total_comments: users[0].posts[0].total_comments)
     }
 }
+*/

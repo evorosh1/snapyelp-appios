@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4854FDFE282DD31600EAA1B6 /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FDFD282DD31600EAA1B6 /* PlaceAnnotationView.swift */; };
 		4854FE02282E740800EAA1B6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FE01282E740800EAA1B6 /* SettingsView.swift */; };
+		488D489B285181E800F8988D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488D489A285181E800F8988D /* NetworkExtension.framework */; };
+		488D489D2851829300F8988D /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488D489C2851829300F8988D /* ExternalAccessory.framework */; };
 		48940F3927F37B2500A31C6E /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48940F3827F37B2500A31C6E /* FriendProfileView.swift */; };
 		48B90CEA27E8B057001D9B1D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B90CE927E8B057001D9B1D /* ProfileView.swift */; };
 		48B90CEC27E8B4BD001D9B1D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B90CEB27E8B4BD001D9B1D /* Profile.swift */; };
@@ -35,6 +37,9 @@
 /* Begin PBXFileReference section */
 		4854FDFD282DD31600EAA1B6 /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationView.swift; sourceTree = "<group>"; };
 		4854FE01282E740800EAA1B6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		488D4898285181E800F8988D /* frontend.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = frontend.entitlements; sourceTree = "<group>"; };
+		488D489A285181E800F8988D /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		488D489C2851829300F8988D /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		48940F3827F37B2500A31C6E /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		48B90CE927E8B057001D9B1D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		48B90CEB27E8B4BD001D9B1D /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -64,17 +69,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488D489D2851829300F8988D /* ExternalAccessory.framework in Frameworks */,
+				488D489B285181E800F8988D /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		488D4899285181E800F8988D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				488D489C2851829300F8988D /* ExternalAccessory.framework */,
+				488D489A285181E800F8988D /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D4C0153727D3D5AE005654AB = {
 			isa = PBXGroup;
 			children = (
 				D4C0154227D3D5AE005654AB /* frontend */,
 				D4C0154127D3D5AE005654AB /* Products */,
+				488D4899285181E800F8988D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,12 +106,13 @@
 		D4C0154227D3D5AE005654AB /* frontend */ = {
 			isa = PBXGroup;
 			children = (
+				488D4898285181E800F8988D /* frontend.entitlements */,
 				D4C0154527D3D5AE005654AB /* Newsfeed.swift */,
 				D4EA39102823290200D1C790 /* SearchBarView.swift */,
 				D4B3640C2822CD6600AA59DC /* CommentsView.swift */,
 				D4E6B99927E8D9CA002E7530 /* MainView.swift */,
-				D4E3DA56281F3ED000C400D5 /* MapItemView.swift */,
 				D440C323282DD7BD007021DF /* MapView.swift */,
+				D4E3DA56281F3ED000C400D5 /* MapItemView.swift */,
 				4854FDFD282DD31600EAA1B6 /* PlaceAnnotationView.swift */,
 				D44704AC27F39D6E007A54ED /* LoginView.swift */,
 				4854FE01282E740800EAA1B6 /* SettingsView.swift */,
@@ -342,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = frontend/frontend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"frontend/Preview Content\"";
@@ -370,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = frontend/frontend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"frontend/Preview Content\"";

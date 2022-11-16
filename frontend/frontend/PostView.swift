@@ -110,9 +110,10 @@ struct PostView: View {
         }
     }
 }
-
+/*
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
         PostView(user: users[0], post: users[0].posts[0])
     }
 }
+*/

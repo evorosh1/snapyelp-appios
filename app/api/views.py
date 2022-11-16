@@ -21,7 +21,12 @@ class ProfileDetails(APIView):
         user = Token.objects.get(key=str(token)).user
         profile = Profile.objects.filter(user=user).first()
         serializer = ProfileSerializer(profile)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response({
+            "username": user.username,
+            "profile_pic": profile.profile_pic,
+            "bio": profile.bio,
+            "posts": [],
+            "friends": []}, status=status.HTTP_200_OK)
 
     def patch(self, request):
         # get the token

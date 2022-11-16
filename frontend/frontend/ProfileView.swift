@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var draftProfile = Profile.default
+    @State var user : User
     
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            ProfiledisplayView(profile: draftProfile)
+            ProfiledisplayView(user: user)
         }
         .padding()
+        .task{
+            print("user ")
+            print(user.username)
+        }
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
+
+/*struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
     }
 }
+*/
+

@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='profile',
-            name='profile_photo',
+            name='profile_pic',
             field=models.CharField(blank=True, max_length=200, null=True),
         ),
         migrations.AlterField(

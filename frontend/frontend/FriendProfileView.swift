@@ -11,6 +11,7 @@ struct FriendProfileView: View {
     @State var backhome = false
     @State private var showFriends = false
     var user: User
+    var friend: Friends
     var posts: [Post]
     
     var body: some View {
@@ -99,9 +100,10 @@ struct FriendProfileView: View {
     }
 }
 
-
+/*
 struct FriendProfileView_Previews: PreviewProvider {
     static var previews: some View {
         FriendProfileView(user: users[0], posts: users[0].posts)
     }
 }
+*/

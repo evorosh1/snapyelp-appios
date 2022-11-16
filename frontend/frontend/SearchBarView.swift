@@ -10,12 +10,13 @@ import SwiftUI
 /// This creates the view for the search bar functionaility
 struct SearchBarView: View {
     @State var search_text = ""
+    @State var user : User
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(searchResults, id: \.self) { user in
-                    NavigationLink(destination: FriendProfileView(user: user, posts: user.posts)) {
+                ForEach(searchResults, id: \.self) { friend in
+                    NavigationLink(destination: FriendProfileView(user: user, friend: friend, posts: user.posts)) {
                         HStack(alignment: .center, spacing: 10) {
                             Image(user.profile_pic)
                                 .resizable()
@@ -37,17 +38,17 @@ struct SearchBarView: View {
     }
     
     /// This helper method filters the data for a user or all users that match the search query
-    var searchResults: [User] {
+    var searchResults: [Friends] {
         if search_text.isEmpty {
             return []
         } else {
-            return users.filter { $0.username.contains(search_text) }
+            return user.friends.filter { $0.username.contains(search_text) }
         }
     }
 }
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView()
+        SearchBarView(user : User())
     }
 }

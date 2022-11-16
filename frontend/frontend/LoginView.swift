@@ -9,6 +9,8 @@ import SwiftUI
 
 let lightGrayColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0)
 
+var token = ""
+
 /// This creates the view for the login page
 struct LoginView: View {
     
@@ -20,6 +22,8 @@ struct LoginView: View {
     
     @State var showSignupView = false
     @State var showMainView = false
+    
+   // @State var token: String = "abc"
     
     var body: some View {
         VStack(alignment: .center) {
@@ -45,8 +49,8 @@ struct LoginView: View {
                     .textInputAutocapitalization(.never)
                 
                Button(action: {
-                    //postLoginData()
-                    showMainView.toggle()
+                    postLoginData()
+                    //showMainView.toggle()
                 }, label: {
                     Text("LOGIN")
                         .padding(.vertical, 20)
@@ -58,14 +62,17 @@ struct LoginView: View {
                 })
                 .padding(.top, 20)
                 .padding(.bottom, 10)
-                .fullScreenCover(isPresented: $showMainView, content: MainView.init)
-
+                .fullScreenCover(isPresented: $showMainView){
+                    MainView()
+                }
                 Button(action: {
                     showSignupView.toggle()
                 }, label: {
                     Text("Don't have an acount, signup here")
                 })
-                .fullScreenCover(isPresented: $showSignupView, content: SignupView.init)
+                    .fullScreenCover(isPresented: $showSignupView){
+                        SignupView(token: token)
+                    }
             }
             .padding(.horizontal, 2)
             
@@ -75,7 +82,7 @@ struct LoginView: View {
     }
     
     func postLoginData() {
-        guard let url = URL(string: "http://0.0.0.0:8000/login/") else {
+        guard let url = URL(string: "http://localhost:8000/login/") else {
             print("api is down")
             return
         }
@@ -110,8 +117,10 @@ struct LoginView: View {
                 if let response = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     DispatchQueue.main.async {
                         print(response)
+                        print(token)
                         token = response["token"] as! String
-                        self.showMainView.toggle()
+                        print(token)
+                        showMainView.toggle()
                     }
                     return
                 }

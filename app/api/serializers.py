@@ -7,11 +7,11 @@ from django.contrib.auth import authenticate
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ['user', 'bio', 'profile_photo']
-        extra_kwargs = {'user': {'required': False}, 'bio': {'required': False}, 'profile_photo': {'required': False},}
+        fields = ['user', 'bio', 'profile_pic']
+        extra_kwargs = {'user': {'required': False}, 'bio': {'required': False}, 'profile_pic': {'required': False},}
 
     def update(self, instance, validated_data):
-        instance.profile_photo = validated_data.get('profile_photo', instance.profile_photo)
+        instance.profile_pic = validated_data.get('profile_pic', instance.profile_pic)
         instance.bio = validated_data.get('bio', instance.bio)
         instance.save()
         return instance

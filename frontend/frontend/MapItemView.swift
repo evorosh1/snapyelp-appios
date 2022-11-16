@@ -42,9 +42,10 @@ struct MapItemView: View {
     }
 }
 
-
+/*
 struct MapItemView_Previews: PreviewProvider {
     static var previews: some View {
         MapItemView(user: users[0].username, post: users[0].posts[0])
     }
 }
+*/

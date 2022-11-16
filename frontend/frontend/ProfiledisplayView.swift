@@ -13,7 +13,7 @@ struct ProfiledisplayView: View {
     @State var likeButtonBool: Bool = false
     @State var showComments: Bool = false
     
-    var profile: Profile
+    @State var user: User
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -27,7 +27,7 @@ struct ProfiledisplayView: View {
                         Circle().stroke(.white, lineWidth: 4)
                     }
                     .shadow(radius: 7)
-                Text(profile.user.username)
+                Text(user.username)
                     .bold()
                     .font(.title)
                 Spacer()
@@ -58,7 +58,7 @@ struct ProfiledisplayView: View {
                         Text("Friends List")
                         Spacer()
                         VStack{
-                            ForEach(profile.user.friends, id: \.self) { friend in
+                            ForEach(user.friends, id: \.self) { friend in
                                 HStack {
                                     Image(friend.profile_pic)
                                         .resizable()
@@ -80,8 +80,8 @@ struct ProfiledisplayView: View {
         
         ScrollView {
             VStack(spacing: 10) {
-                ForEach(profile.posts, id: \.self) { post in
-                    PostView(user: profile.user, post: post)
+                ForEach(user.posts, id: \.self) { post in
+                    PostView(user: user, post: post)
                 }
             }
             .frame(width: nil)
@@ -92,7 +92,7 @@ struct ProfiledisplayView: View {
 
 struct ProfiledisplayView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfiledisplayView(profile: Profile.default)
+        ProfiledisplayView(user: User())
     }
 }
 

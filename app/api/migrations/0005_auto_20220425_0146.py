@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='profile',
-            name='profile_photo',
+            name='profile_pic',
             field=models.CharField(default='', max_length=200),
             preserve_default=False,
         ),

@@ -12,7 +12,7 @@ struct Profile {
     var user: User
     var posts: [Post]
     
-    static let `default` = Profile(user: users[0], posts: users[0].posts)
+  //  static let `default` = Profile(user: users[0], posts: users[0].posts)
     
     
 }
